@@ -7,21 +7,30 @@ export default class MarkerWeb extends React.Component<
   MarkerProps,
   { selected: boolean }
 > {
-  state = {
-    selected: false
-  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: props.initialSelected
+    }
+  }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.selected !== this.state.selected) {
       if (this.state.selected) {
+        console.log('calling onSelect');
         this.props.onSelect();
       } else {
+        console.log('calling onDeselect');
         this.props.onDeselect();
       }
     }
   }
 
-  public hideCallout = () => this.setState({ selected: false });
+  public hideCallout = () => {
+    console.log('called hideCallout');
+    this.setState({ selected: false });
+  };
 
   render() {
     const props = this.props;
@@ -31,9 +40,8 @@ export default class MarkerWeb extends React.Component<
           <Marker
             anchor="bottom"
             onClick={() => {
-              this.setState({ selected: true }, () =>
-                onPress(props.identifier)
-              );
+              onPress(props.identifier)
+              this.setState({ selected: true });
             }}
             coordinates={[
               props.coordinate.longitude,

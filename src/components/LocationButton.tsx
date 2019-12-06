@@ -8,6 +8,7 @@ import {
   View
 } from "react-native";
 import { SmallFatText } from "./Text";
+import { spBlue, white } from "../constants/Colors";
 
 export default function LocationButton(props: TouchableOpacityProps) {
   return (
@@ -26,7 +27,7 @@ export default function LocationButton(props: TouchableOpacityProps) {
               height: 36,
               position: "absolute",
               borderRadius: 8,
-              backgroundColor: "#283957",
+              backgroundColor: spBlue,
               transform: [{ rotateZ: "45deg" }]
             }
           ]}
@@ -41,13 +42,13 @@ export default function LocationButton(props: TouchableOpacityProps) {
             fillRule="evenodd"
             clipRule="evenodd"
             d="M20.5792 2.09869C21.4184 1.72093 22.2792 2.58154 21.9017 3.42081L13.8186 21.3893C13.4353 22.2413 12.1969 22.1492 11.9439 21.2498L10.0837 14.6358C9.98953 14.301 9.7282 14.0392 9.39359 13.9444L2.74755 12.0618C1.84971 11.8074 1.7587 10.5708 2.60962 10.1878L20.5792 2.09869Z"
-            fill="#ffffff"
+            fill={white}
           />
         </Svg>
       </View>
       <SmallFatText
         style={[
-          { marginTop: 12, color: "#283957" }
+          { marginTop: 12, color: spBlue }
         ]}
       >
         Prowadź

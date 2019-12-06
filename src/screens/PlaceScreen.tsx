@@ -15,6 +15,7 @@ import LocationButton from "../components/LocationButton";
 import MapFocusContext from "../components/MapFocusContext";
 import DirectionIcon from "../components/DirectionIcon";
 import { BigFatTitle, BodyText, SmallFatText, StrongText } from "../components/Text";
+import { touchableContentColor, touchableBackgroundColor, spBlue } from "../constants/Colors";
 
 export default function PlaceScreen(props: NavigationStackScreenProps) {
   const placeKey = props.navigation.getParam("placeKey", "sp");
@@ -35,13 +36,13 @@ export default function PlaceScreen(props: NavigationStackScreenProps) {
         </View>
         <TouchableHighlight
           style={{
-            backgroundColor: "#283957",
+            backgroundColor: touchableBackgroundColor,
             borderRadius: 6,
             marginTop: 10,
             paddingHorizontal: 12,
             paddingVertical: 12,
-            
           }}
+          underlayColor={spBlue}
           onPress={async () => {
             if (await Linking.canOpenURL("comgooglemaps://")) {
               Linking.openURL(
@@ -59,8 +60,8 @@ export default function PlaceScreen(props: NavigationStackScreenProps) {
           }}
         >
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-            <DirectionIcon color="#fff" style={{ marginRight: 10 }} />
-            <StrongText style={{ color: "#fff" }}>Prowadź</StrongText>
+            <DirectionIcon color={touchableContentColor} style={{ marginRight: 10 }} />
+            <StrongText style={{ color: touchableContentColor }}>Prowadź</StrongText>
           </View>
         </TouchableHighlight>
       </View>

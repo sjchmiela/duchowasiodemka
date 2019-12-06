@@ -4,6 +4,7 @@ import { withMap } from "react-mapbox-gl/lib-esm/context";
 import { MapViewProps } from "react-native-maps";
 import { View } from "react-native";
 import mapboxgl from "mapbox-gl";
+import { withNavigation } from "react-navigation";
 
 const accessToken =
   "pk.eyJ1Ijoic2pjaG1pZWxhIiwiYSI6ImNqMnJhYWppMzAwM3Yyd3FwMHZlYXZzYmsifQ.aKPYfTV3FLMD_Je7XgXv4w";
@@ -48,7 +49,7 @@ function GeolocateControl({ map, onError }) {
 
 const GeolocateControlWired = withMap(GeolocateControl);
 
-export default function MapView(props: MapViewProps) {
+export default withNavigation(function MapView(props: MapViewProps) {
   const [zoom, setZoom] = React.useState(14);
   const onZoom = React.useCallback(
     map => {
@@ -66,7 +67,7 @@ export default function MapView(props: MapViewProps) {
   );
   const [selectedMarkerId, setSelectedMarkerId] = React.useState();
 
-  const selectedMarkerIdRef = React.useRef("");
+  const selectedMarkerIdRef = React.useRef(props.navigation.getParam('placeKey'));
 
   const onPress = React.useCallback(
     id => {
@@ -97,4 +98,4 @@ export default function MapView(props: MapViewProps) {
       </MapMarkerPressContext.Provider>
     </Map>
   );
-}
+});

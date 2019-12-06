@@ -1,13 +1,16 @@
 import React, { RefObject } from "react";
-import { View } from "react-native";
+import { View, Platform } from "react-native";
 import { Transition, Transitioning, TransitioningView } from "react-native-reanimated";
 
 import PlacePin from "../components/PlacePin";
 import Marker, { MarkerProps } from './Marker';
 import details from "../details";
+import { white, spBlue } from "../constants/Colors";
+import { withNavigation, NavigationInjectedProps } from "react-navigation";
 
 export interface PlaceMarkerProps extends MarkerProps {
   markerRef: React.RefObject<Marker>;
+  initialSelected: boolean;
 }
 
 const transition = (
@@ -15,12 +18,12 @@ const transition = (
 );
 
 function PlaceMarker(props: PlaceMarkerProps) {
-  const { markerRef, ...rest } = props;
+  const { markerRef, initialSelected, ...rest } = props;
   const identifier = rest.identifier;
-  const [isSelected, setIsSelected] = React.useState(false);
+  const [isSelected, setIsSelected] = React.useState(initialSelected);
   const transitioningViewRef = React.createRef<TransitioningView>();
   const animate = React.useCallback(() => {
-    if (transitioningViewRef.current) {
+    if (transitioningViewRef.current && Platform.OS !== "web") {
       transitioningViewRef.current.animateNextTransition();
     }
   }, [transitioningViewRef]);
@@ -49,6 +52,7 @@ function PlaceMarker(props: PlaceMarkerProps) {
       stopPropagation
       tracksViewChanges={false}
       coordinate={details[identifier].location}
+      initialSelected={isSelected}
       {...rest}
       ref={markerRef}
       onSelect={onSelect}
@@ -70,7 +74,7 @@ export default React.forwardRef((props, ref) => (
 ));
 
 PlacePin.defaultProps = {
-  backgroundColor: "#fff",
-  pinColor: "#f00",
-  graphicColor: "#000"
+  backgroundColor: white,
+  pinColor: spBlue,
+  graphicColor: spBlue
 };

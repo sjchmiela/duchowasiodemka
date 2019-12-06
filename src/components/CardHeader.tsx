@@ -1,5 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Platform } from "react-native";
+import { spBlue, white } from "../constants/Colors";
 
 export interface CardHeaderProps {
   bordered?: boolean;
@@ -29,22 +30,22 @@ CardHeader.defaultProps = {
 
 const styles = StyleSheet.create({
   container: {
-    shadowColor: "#283957",
+    shadowColor: spBlue,
     shadowOpacity: 0.3,
     shadowRadius: 4,
     shadowOffset: { width: 0, height: -8 },
-    backgroundColor: "#ffffff",
+    backgroundColor: white,
     paddingVertical: 8,
     alignItems: "center"
   },
   bordered: {
-    borderTopColor: "#283957",
+    borderTopColor: spBlue,
     borderTopWidth: StyleSheet.hairlineWidth
   },
   puller: {
     height: 4,
     width: 32,
-    backgroundColor: "#283957",
+    backgroundColor: spBlue,
     borderRadius: 4
   }
 });

@@ -13,6 +13,8 @@ import BottomSheet from "../components/BottomSheet";
 import MapFocusContext from "../components/MapFocusContext";
 import PlacePin from "../components/PlacePin";
 import PlaceMarker from "../components/PlaceMarker";
+import { shadowColor, spBlue } from "../constants/Colors";
+import { NavigationActions } from "react-navigation";
 
 const initialRegion = {
   latitude: 50.06136,
@@ -30,10 +32,11 @@ export default function MapScreen(props: NavigationStackScreenProps) {
   const refs = React.useRef<{ [key: string]: React.RefObject<Marker> }>({});
   const blur = React.useCallback(
     (key: string | undefined) => {
+      console.log(key, refs);
       if (key && refs.current[key] && refs.current[key].current) {
         refs.current[key].current.hideCallout();
       }
-      props.navigation.navigate("Prompt");
+      props.navigation.navigate("Prompt", { placeKey: undefined });
       if (sheetRef.current) {
         sheetRef.current.snapTo(0);
       }
@@ -42,10 +45,11 @@ export default function MapScreen(props: NavigationStackScreenProps) {
   );
   const focus = React.useCallback(
     (placeKey: string) => {
-      props.navigation.push("Place", { placeKey });
-      if (sheetRef.current && Platform.OS === "web") {
-        sheetRef.current.snapTo(1);
-      }
+      props.navigation.push(
+        "Place",
+        { placeKey },
+        NavigationActions.setParams({})
+      );
     },
     [props.navigation]
   );
@@ -53,12 +57,18 @@ export default function MapScreen(props: NavigationStackScreenProps) {
     ({ nativeEvent: { id } }) => focus(id),
     [focus]
   );
+  const initialRegionOrPlace = {
+    ...initialRegion,
+    ...(props.navigation.getParam("placeKey")
+      ? details[props.navigation.getParam("placeKey")].location
+      : {})
+  };
   return (
     <View style={styles.fullHeight}>
       <MapView
         showsUserLocation
         style={styles.fullHeight}
-        initialRegion={initialRegion}
+        initialRegion={initialRegionOrPlace}
         onPress={blur}
         onMarkerPress={onMarkerPress}
       >
@@ -66,30 +76,21 @@ export default function MapScreen(props: NavigationStackScreenProps) {
           <PlaceMarker
             key={key}
             identifier={key}
+            initialSelected={key === props.navigation.getParam("placeKey")}
             ref={refs.current[key] || (refs.current[key] = React.createRef())}
           />
         ))}
       </MapView>
       <MapFocusContext.Provider value={{ blur }}>
         <BottomSheet
-          ref={
-            Platform.OS === "web"
-              ? ref => {
-                if (!ref) {
-                  return;
-                }
-                console.log('setting sheetRef.current to ', ref);
-                  sheetRef.current = ref;
-                  console.log(sheetRef.current);
-                }
-              : sheetRef
-          }
+          ref={sheetRef}
+          navigation={props.navigation}
           style={styles.fullHeight}
           renderHeader={renderHeader}
           renderContent={() => (
             <View style={styles.panel}>{props.children}</View>
           )}
-          snapPoints={["25%", Dimensions.get("window").height - 100]}
+          snapPoints={["30%", Dimensions.get("window").height - 100]}
         />
       </MapFocusContext.Provider>
     </View>
@@ -101,12 +102,12 @@ const styles = StyleSheet.create({
     flex: 1
   },
   header: {
-    shadowColor: "#283957",
+    shadowColor: shadowColor,
     shadowOpacity: 1,
     shadowRadius: 2,
     shadowOffset: { width: 0, height: -3 },
-    backgroundColor: "#283957",
-    borderTopColor: "#283957",
+    backgroundColor: spBlue,
+    borderTopColor: spBlue,
     height: StyleSheet.hairlineWidth,
     ...(Platform.OS === "web"
       ? {

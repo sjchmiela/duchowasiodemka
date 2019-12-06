@@ -9,15 +9,13 @@ import { Platform } from "react-native";
 
 const DetailsNavigator = createMaterialTopTabNavigator(
   {
-    Historia: {
-      screen: createPartScreen("history", "Historia")
-    },
-    Zabytki: createPartScreen("relics", "Zabytki"),
-    Ciekawostki: createPartScreen("facts", "Ciekawostki"),
-    Zakon: createPartScreen("order", "Zakon"),
-    Założyciel: createPartScreen("founder", "Założyciel"),
-    Modlitwa: createPartScreen("prayer", "Modlitwa"),
-    Duchowość: createPartScreen("spirituality", "Duchowość")
+    history: createPartScreen("history", "Historia"),
+    relics: createPartScreen("relics", "Zabytki"),
+    facts: createPartScreen("facts", "Ciekawostki"),
+    order: createPartScreen("order", "Zakon"),
+    founder: createPartScreen("founder", "Założyciel"),
+    prayer: createPartScreen("prayer", "Modlitwa"),
+    spirituality: createPartScreen("spirituality", "Duchowość")
   },
   {
     tabBarOptions: {

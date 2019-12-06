@@ -11,8 +11,14 @@ import MapScreen from "../screens/MapScreen";
 
 const BottomSheetNavigator = createStackNavigator(
   {
-    Prompt: PromptScreen,
-    Place: PlaceNavigator
+    Prompt: {
+      screen: PromptScreen,
+      path: ""
+    },
+    Place: {
+      screen: PlaceNavigator,
+      path: "place/:placeKey"
+    }
   },
   {
     // initialRouteName: "Place",
