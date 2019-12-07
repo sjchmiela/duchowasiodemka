@@ -6,7 +6,8 @@ import {
   Dimensions,
   TouchableOpacity,
   ScrollView,
-  TouchableHighlight
+  TouchableHighlight,
+  Platform
 } from "react-native";
 import { NavigationStackScreenProps } from "react-navigation-stack";
 import CardHeader from "../components/CardHeader";
@@ -18,55 +19,15 @@ import {
   spBlue
 } from "../constants/Colors";
 import DirectionIcon from "../components/DirectionIcon";
+import { PrimaryButton } from "../components/Button";
 
 export default function PromptScreen(props: NavigationStackScreenProps) {
   return (
     <View style={{ flex: 1 }}>
-      <CardHeader bordered={false} />
+      <CardHeader bordered={Platform.OS === "web"} />
       <View style={{ paddingHorizontal: 10 }}>
         <BigFatTitle style={{}}>Duchowa Siódemka</BigFatTitle>
-        <TouchableHighlight
-          style={{
-            backgroundColor: touchableBackgroundColor,
-            borderRadius: 6,
-            marginTop: 10,
-            paddingHorizontal: 12,
-            paddingVertical: 12,
-            marginBottom: 10
-          }}
-          underlayColor={spBlue}
-          onPress={async () => {
-            if (await Linking.canOpenURL("comgooglemaps://")) {
-              Linking.openURL(
-                `comgooglemaps://?daddr=${encodeURIComponent(
-                  placeName
-                )}&directionsmode=walking`
-              );
-            } else {
-              Linking.openURL(
-                `http://maps.apple.com/?daddr=${encodeURIComponent(
-                  placeName
-                )}&dirflg=w`
-              );
-            }
-          }}
-        >
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center"
-            }}
-          >
-            <DirectionIcon
-              color={touchableContentColor}
-              style={{ marginRight: 10 }}
-            />
-            <StrongText style={{ color: touchableContentColor }}>
-              Prowadź do pierwszego punktu
-            </StrongText>
-          </View>
-        </TouchableHighlight>
+        <PrimaryButton title="Pusty przycisk" style={{ marginBottom: 10 }} />
       </View>
       <ScrollView
         style={{

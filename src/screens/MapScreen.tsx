@@ -24,10 +24,6 @@ const initialRegion = {
 };
 
 export default function MapScreen(props: NavigationStackScreenProps) {
-  const renderHeader = React.useCallback(
-    () => <View style={styles.header} />,
-    []
-  );
   const sheetRef = React.createRef<BottomSheet>();
   const refs = React.useRef<{ [key: string]: React.RefObject<Marker> }>({});
   const blur = React.useCallback(
@@ -38,7 +34,7 @@ export default function MapScreen(props: NavigationStackScreenProps) {
       }
       props.navigation.navigate("Prompt", { placeKey: undefined });
       if (sheetRef.current) {
-        sheetRef.current.snapTo(0);
+        sheetRef.current.collapse();
       }
     },
     [props.navigation, sheetRef, refs]
@@ -84,14 +80,11 @@ export default function MapScreen(props: NavigationStackScreenProps) {
       <MapFocusContext.Provider value={{ blur }}>
         <BottomSheet
           ref={sheetRef}
-          navigation={props.navigation}
           style={styles.fullHeight}
-          renderHeader={renderHeader}
-          renderContent={() => (
-            <View style={styles.panel}>{props.children}</View>
-          )}
-          snapPoints={["30%", Dimensions.get("window").height - 100]}
-        />
+          navigation={props.navigation}
+        >
+          {props.children}
+        </BottomSheet>
       </MapFocusContext.Provider>
     </View>
   );
@@ -116,7 +109,5 @@ const styles = StyleSheet.create({
         }
       : {})
   },
-  panel: {
-    height: Dimensions.get("window").height - 100
-  }
+  panel: {}
 });

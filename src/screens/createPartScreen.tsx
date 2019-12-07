@@ -60,7 +60,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   textPart: {
-    margin: 8
+    marginTop: 8,
+    marginBottom: 14,
+    marginHorizontal: 14,
   },
   labelFromReactNativeTabView: {
     textAlign: "center",

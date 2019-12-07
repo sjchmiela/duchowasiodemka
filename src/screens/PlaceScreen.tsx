@@ -4,9 +4,11 @@ import {
   Text,
   StyleSheet,
   Linking,
-  TouchableHighlight
+  TouchableHighlight,
+  Platform
 } from "react-native";
 import { NavigationStackScreenProps } from "react-navigation-stack";
+import { Octicons, MaterialIcons } from "@expo/vector-icons";
 
 import details from "../details";
 import CardHeader from "../components/CardHeader";
@@ -14,8 +16,18 @@ import CloseButton from "../components/CloseButton";
 import LocationButton from "../components/LocationButton";
 import MapFocusContext from "../components/MapFocusContext";
 import DirectionIcon from "../components/DirectionIcon";
-import { BigFatTitle, BodyText, SmallFatText, StrongText } from "../components/Text";
-import { touchableContentColor, touchableBackgroundColor, spBlue } from "../constants/Colors";
+import { PrimaryButton, SecondaryButton } from "../components/Button";
+import {
+  BigFatTitle,
+  BodyText,
+  SmallFatText,
+  StrongText
+} from "../components/Text";
+import {
+  touchableContentColor,
+  touchableBackgroundColor,
+  spBlue
+} from "../constants/Colors";
 
 export default function PlaceScreen(props: NavigationStackScreenProps) {
   const placeKey = props.navigation.getParam("placeKey", "sp");
@@ -27,43 +39,41 @@ export default function PlaceScreen(props: NavigationStackScreenProps) {
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.fullHeight}>
-            <BigFatTitle style={{ marginBottom: 4 }}>{placeName}</BigFatTitle>
+            <BigFatTitle style={styles.title}>{placeName}</BigFatTitle>
             <BodyText>{orderName}</BodyText>
           </View>
           <MapFocusContext.Consumer>
             {({ blur }) => <CloseButton onPress={() => blur(placeKey)} />}
           </MapFocusContext.Consumer>
         </View>
-        <TouchableHighlight
-          style={{
-            backgroundColor: touchableBackgroundColor,
-            borderRadius: 6,
-            marginTop: 10,
-            paddingHorizontal: 12,
-            paddingVertical: 12,
-          }}
-          underlayColor={spBlue}
-          onPress={async () => {
-            if (await Linking.canOpenURL("comgooglemaps://")) {
-              Linking.openURL(
-                `comgooglemaps://?daddr=${encodeURIComponent(
-                  placeName
-                )}&directionsmode=walking`
-              );
-            } else {
-              Linking.openURL(
-                `http://maps.apple.com/?daddr=${encodeURIComponent(
-                  placeName
-                )}&dirflg=w`
-              );
-            }
-          }}
-        >
-          <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-            <DirectionIcon color={touchableContentColor} style={{ marginRight: 10 }} />
-            <StrongText style={{ color: touchableContentColor }}>Prowadź</StrongText>
-          </View>
-        </TouchableHighlight>
+        <View style={styles.buttonContainer}>
+          <PrimaryButton
+            onPress={async () => {
+              if (await Linking.canOpenURL("comgooglemaps://") && Platform.OS !== "web") {
+                Linking.openURL(
+                  `comgooglemaps://?daddr=${encodeURIComponent(
+                    placeName
+                  )}&directionsmode=walking`
+                );
+              } else {
+                Linking.openURL(
+                  `http://maps.apple.com/?daddr=${encodeURIComponent(
+                    placeName
+                  )}&dirflg=w`
+                );
+              }
+            }}
+            renderIcon={props => <MaterialIcons {...props} name="directions" size={26} />}
+            title="Prowadź"
+            style={styles.button}
+          />
+          <SecondaryButton
+            title="Witryna"
+            style={[styles.button, { marginLeft: 10 }]}
+            onPress={() => Linking.openURL(placeDetails.url)}
+            renderIcon={props => <Octicons {...props} name="globe" size={24} />}
+          />
+        </View>
       </View>
       {props.children}
     </View>
@@ -77,9 +87,19 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row"
   },
+  title: {
+    marginBottom: 4,
+  },
   container: {
     // flex: 1,
     paddingVertical: 8,
     paddingHorizontal: 14
-  }
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    flex: 1
+  },
+  button: {
+    flex: 1,
+  },
 });

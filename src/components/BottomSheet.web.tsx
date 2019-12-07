@@ -10,143 +10,142 @@ import { LinearGradient } from "expo-linear-gradient";
 import { shadowColor, white } from "../constants/Colors";
 import MapFocusContext from "./MapFocusContext";
 import { StrongText } from "./Text";
-import { withNavigation } from "react-navigation";
 
-// Copied and modified based on
-// https://github.com/DefinitelyTyped/DefinitelyTyped/blob/2ceda6e7ea15eeaa8239832ecdbbb42ff87fbcf8/types/react-navigation/index.d.ts#L1296
-// Allows us to use unexported props type of a component using `infer` keyword
-type InferProps<T extends React.Component<any>> = T extends React.Component<
-  infer P
->
-  ? P
-  : never;
+import { BottomSheetProps } from "./BottomSheet";
+import { NavigationInjectedProps } from "react-navigation";
+
+interface State {
+  state: "expanded" | "collapsed";
+}
+
+function isExpandedBasedOnNavigation(
+  navigation: NavigationInjectedProps<{ expanded: number }>["navigation"]
+) {
+  return Boolean(navigation.getParam("expanded", 0));
+}
 
 export default class BottomSheetWeb extends React.Component<
-  InferProps<BottomSheet>
+  BottomSheetProps,
+  State
 > {
   constructor(props) {
     super(props);
     this.state = {
-      heightIndex: props.navigation.getParam("expanded", 0)
+      state: isExpandedBasedOnNavigation(props.navigation)
+        ? "expanded"
+        : "collapsed"
     };
   }
 
   componentDidUpdate() {
+    const isExpandedBasedOnState = this.state.state === "expanded";
     if (
-      (this.props.navigation.getParam("expanded", 0) || 0) !== this.state.heightIndex
+      isExpandedBasedOnNavigation(this.props.navigation) !=
+      isExpandedBasedOnState
     ) {
       this.props.navigation.setParams({
-        expanded:
-          this.state.heightIndex > 0 ? this.state.heightIndex : undefined
+        expanded: isExpandedBasedOnState ? 1 : undefined
       });
     }
   }
 
-  snapTo = heightIndex => this.setState({ heightIndex });
-  renderExpandButton = () =>
-    this.state.heightIndex === 0 && (
-      <LinearGradient
-        start={[0, 0]}
-        locations={[0, 0.75]}
-        end={[0, 1]}
-        colors={["#ffffff00", "#ffffffff"]}
-        style={{
-          justifyContent: "center",
-          alignItems: "stretch",
-          paddingTop: 50,
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
+  expand = () => this.setState({ state: "expanded" });
+  collapse = () => this.setState({ state: "collapsed" });
 
-          zIndex: 99999
-        }}
-        pointerEvents="box-none"
-      >
-        <TouchableOpacity
-          onPress={() => this.setState({ heightIndex: 1 })}
-          style={{
-            alignItems: "stretch",
-            flex: 1
-          }}
-        >
-          <View
-            style={{
-              flex: 1,
-              // backgroundColor: "red",
-              paddingHorizontal: 10,
-              paddingVertical: 10,
-              alignItems: "center"
-            }}
-          >
-            <StrongText>⇡ Rozwiń</StrongText>
-          </View>
-        </TouchableOpacity>
-      </LinearGradient>
-    );
-
-  renderCollapseButton = () =>
-    this.state.heightIndex === 1 && (
-      <TouchableOpacity
-        onPress={() => this.setState({ heightIndex: 0 })}
-        style={{
-          position: "absolute",
-          top: -42,
-          left: 0,
-          right: 0,
-          alignItems: "stretch",
-          flex: 1,
-          zIndex: 9999
-          // backgroundColor: "red"
-        }}
-      >
-        <View
-          style={{
-            flex: 1,
-            // backgroundColor: "red",
-            paddingHorizontal: 10,
-            paddingVertical: 10,
-            alignItems: "center"
-          }}
-          pointerEvents="box-only"
-        >
-          <StrongText style={{ color: white }}>⇣ Zwiń</StrongText>
-        </View>
+  renderExpandButton = () => (
+    <LinearGradient
+      start={[0, 0]}
+      locations={[0, 0.75]}
+      end={[0, 1]}
+      colors={["#ffffff00", "#ffffffff"]}
+      style={styles.gradient}
+      pointerEvents="box-none"
+    >
+      <TouchableOpacity onPress={this.expand} style={styles.button}>
+        <StrongText style={styles.buttonText}>⇡ Rozwiń</StrongText>
       </TouchableOpacity>
-    );
+    </LinearGradient>
+  );
+
+  renderCollapseButton = () => (
+    <TouchableOpacity onPress={this.collapse} style={styles.button}>
+      <StrongText style={[styles.buttonText, styles.collapseButtonText]}>
+        ⇣ Zwiń
+      </StrongText>
+    </TouchableOpacity>
+  );
+
   render() {
     return (
-      <View
-        pointerEvents="none"
-        style={[StyleSheet.absoluteFill, this.props.style, { zIndex: 999 }]}
-      >
+      <>
         <View
-          pointerEvents={this.state.heightIndex === 0 ? "none" : "box-only"}
-          style={[
-            StyleSheet.absoluteFill,
-            {
-              zIndex: 1000,
-              backgroundColor: shadowColor,
-              opacity: this.state.heightIndex === 0 ? 0 : 0.3
-            }
-          ]}
-        />
-        <View
-          style={{
-            position: "absolute",
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 1001,
-            height: this.props.snapPoints[this.state.heightIndex]
-          }}
+          style={
+            this.state.state === "expanded"
+              ? [StyleSheet.absoluteFill, styles.backdrop]
+              : []
+          }
+          pointerEvents="box-none"
         >
-          {this.renderCollapseButton()}
-          {this.props.renderHeader()}
-          {this.props.renderContent()}
-          {this.renderExpandButton()}
+          <View
+            style={[
+              this.props.style,
+              styles.container,
+              this.state.state === "collapsed" && styles.containerCollapsed,
+              this.state.state === "expanded" && styles.containerExpanded
+            ]}
+          >
+            {this.state.state === "expanded" && this.renderCollapseButton()}
+            {this.props.children}
+            {this.state.state === "collapsed" && this.renderExpandButton()}
+          </View>
         </View>
-      </View>
+        <View style={[this.state.state === "expanded" && { height: 300 }]} />
+      </>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  backdrop: {
+    zIndex: 1000,
+    backgroundColor: "rgba(0, 0, 0, 0.7)"
+  },
+  container: {
+    shadowColor: shadowColor,
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    shadowOffset: { width: 0, height: -3 }
+  },
+  containerCollapsed: {
+    flex: 1,
+    height: 300
+  },
+  containerExpanded: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0
+  },
+  gradient: {
+    zIndex: 1000,
+    paddingTop: 60,
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0
+  },
+  button: {
+    alignItems: "stretch"
+  },
+  buttonText: {
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    textAlign: "center"
+  },
+  collapseButtonText: {
+    color: white,
+    textShadowRadius: 8,
+    textShadowColor: "#000"
+  }
+});

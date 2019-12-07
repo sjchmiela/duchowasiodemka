@@ -4,6 +4,7 @@ import { useScreens } from 'react-native-screens';
 import * as Font from 'expo-font';
 import MainNavigation from './src/navigation/MainNavigation';
 import { Platform } from 'react-native';
+import { Octicons, MaterialIcons } from '@expo/vector-icons';
 
 if (Platform.OS !== "web") {
   useScreens(true);
@@ -16,6 +17,8 @@ export default function App() {
     Font.loadAsync('Inter', require('./assets/Inter-Regular.otf')),
     Font.loadAsync('Inter-Bold', require('./assets/Inter-Bold.otf')),
     Font.loadAsync('Inter-ExtraBold', require('./assets/Inter-ExtraBold.otf')),
+    Octicons.loadFont(),
+    MaterialIcons.loadFont(),
   ]))
 
   if (!isLoaded) {
