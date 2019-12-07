@@ -1,6 +1,6 @@
 import React from "react";
 import RABottomSheet from "reanimated-bottom-sheet";
-import { Dimensions } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import { NavigationInjectedProps } from "react-navigation";
 
 import { shadowColor, spBlue } from "../constants/Colors";
@@ -10,7 +10,7 @@ export interface BottomSheetProps
 
 export default class BottomSheet extends React.Component<BottomSheetProps> {
   public static renderHeader = () => <View style={styles.header} />;
-  sheetRef: React.RefObject<RABottomSheet>;
+  sheetRef: React.RefObject<RABottomSheet> = React.createRef();
 
   expand = () => this.sheetRef.current.snapTo(1);
   collapse = () => this.sheetRef.current.snapTo(0);
