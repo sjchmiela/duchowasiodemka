@@ -18,6 +18,7 @@ export default function App() {
     Promise.all([
       Font.loadAsync("Inter", require("./assets/Inter-Regular.otf")),
       Font.loadAsync("Inter-Bold", require("./assets/Inter-Bold.otf")),
+      Font.loadAsync("Inter-Italic", require("./assets/Inter-Italic.otf")),
       Font.loadAsync(
         "Inter-ExtraBold",
         require("./assets/Inter-ExtraBold.otf")

@@ -1,3 +1,7 @@
+import React from "react";
+import { Text } from "react-native";
+import { BodyText, ItalicText } from "../components/Text";
+
 export const ofm = {
   abbreviation: "OFMCap",
   orderName: "Kapucyni",
@@ -36,8 +40,14 @@ export const ofm = {
     "To w Domku Loretańskim 25 sierpnia 1887 r. przyjął habit franciszkański św. Brat Albert Chmielowski."
   ],
   order: [
-    "Zakon Kapucynów jest częścią rodziny zakonów franciszkańskich. Powstał na mocy wydanej przez papieża Klemensa VII w 1528 r. bulli *Religionis zelus*, w której pozwolił on kilku braciom z zakonu franciszkanów obserwantów na odłączenie się od dotychczasowej rodziny zakonnej i prowadzenie życia eremickiego oraz noszenie brody i habitu ze spiczastym kapturem.",
-
+    <BodyText>
+      Zakon Kapucynów jest częścią rodziny zakonów franciszkańskich. Powstał na
+      mocy wydanej przez papieża Klemensa VII w 1528 r. bulli{" "}
+      <ItalicText>Religionis zelus</ItalicText>, w której
+      pozwolił on kilku braciom z zakonu franciszkanów obserwantów na odłączenie
+      się od dotychczasowej rodziny zakonnej i prowadzenie życia eremickiego
+      oraz noszenie brody i habitu ze spiczastym kapturem.
+    </BodyText>,
     "Życie prowadzone zgodnie z franciszkańskimi ideałami kapucynów charakteryzuje: prostota, bliskość ludziom, duch braterstwa w życiu wspólnym i apostolacie, a szczególnie życie pokuty i modlitwy.",
 
     "Kapucyni starają się wcielać w życie franciszkańskie ideały poprzez: dawanie pierwszeństwa życiu modlitwy, szczególnie kontemplacyjnej; praktykowanie radykalnego ubóstwa, zarówno osobistego, jak i wspólnotowego; przykład życia surowego oraz radosnej pokuty w umiłowaniu Krzyża Pańskiego; pielęgnowanie wzajemnych relacji braterskich we wspólnocie, jako rodzinie zgromadzonej w Chrystusie; chętne przebywanie pośród ubogich, słabych i chorych, uczestnicząc w ich życiu i zachowując charakterystyczną bliskość z ludem; różne formy apostolatu w duchu służby."

@@ -33,7 +33,7 @@ import useLandscapeScreen from "../hooks/useLandscapeScreen";
 export default function PlaceScreen(props: NavigationStackScreenProps) {
   const placeKey = props.navigation.getParam("placeKey", "sp");
   const placeDetails = details[placeKey];
-  const { placeName, orderName } = placeDetails;
+  const { placeName, orderName, abbreviation } = placeDetails;
   const isLandscape = useLandscapeScreen();
   return (
     <View style={styles.fullHeight}>
@@ -44,7 +44,7 @@ export default function PlaceScreen(props: NavigationStackScreenProps) {
         <View style={styles.header}>
           <View style={styles.fullHeight}>
             <BigFatTitle style={styles.title}>{placeName}</BigFatTitle>
-            <BodyText>{orderName}</BodyText>
+            <BodyText>{orderName} ({abbreviation})</BodyText>
           </View>
           <MapFocusContext.Consumer>
             {({ blur }) => <CloseButton onPress={() => blur(placeKey)} />}

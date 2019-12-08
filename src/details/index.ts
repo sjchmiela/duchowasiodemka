@@ -1,7 +1,7 @@
 import sp from "./sp";
 import sj from "./sj";
 import op from "./op";
-import ocarm from "./ocarm";
+import * as ocarm from "./ocarm";
 import ofm from "./ofm";
 import ofmconv from "./ofmconv";
 import ofmcap from "./ofmcap";

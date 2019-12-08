@@ -11,7 +11,7 @@ import {
 } from "react-native";
 import { NavigationStackScreenProps } from "react-navigation-stack";
 import CardHeader from "../components/CardHeader";
-import { BodyText, BigFatTitle, StrongText } from "../components/Text";
+import { BodyText, BigFatTitle, StrongText, SmallFatText } from "../components/Text";
 import {
   lightSpBlue,
   touchableBackgroundColor,
@@ -21,6 +21,7 @@ import {
 import DirectionIcon from "../components/DirectionIcon";
 import { PrimaryButton } from "../components/Button";
 import useLandscapeScreen from "../hooks/useLandscapeScreen";
+import { Updates } from "expo";
 
 export default function PromptScreen(props: NavigationStackScreenProps) {
   const isLandscape = useLandscapeScreen();
