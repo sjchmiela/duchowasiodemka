@@ -1,4 +1,5 @@
 export const ofmconv = {
+  abbreviation: "OFMConv",
   orderName: "Franciszkanie",
   placeName: "Kościół św. Franciszka z Asyżu",
   address: "pl. Wszystkich Świętych",

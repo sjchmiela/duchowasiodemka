@@ -28,14 +28,16 @@ import {
   touchableBackgroundColor,
   spBlue
 } from "../constants/Colors";
+import useLandscapeScreen from "../hooks/useLandscapeScreen";
 
 export default function PlaceScreen(props: NavigationStackScreenProps) {
   const placeKey = props.navigation.getParam("placeKey", "sp");
   const placeDetails = details[placeKey];
   const { placeName, orderName } = placeDetails;
+  const isLandscape = useLandscapeScreen();
   return (
     <View style={styles.fullHeight}>
-      <CardHeader /* tintColor={placeDetails.pin.pinColor} */ />
+      <CardHeader bordered={!isLandscape} /* tintColor={placeDetails.pin.pinColor} */ />
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.fullHeight}>

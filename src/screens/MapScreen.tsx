@@ -5,19 +5,20 @@ import {
   NavigationStackScreenProps,
   createStackNavigator
 } from "react-navigation-stack";
+import { NavigationActions } from "react-navigation";
 
 import details from "../details";
 import usePrevious from "../hooks/usePrevious";
+import useLandscapeScreen from "../hooks/useLandscapeScreen";
 import MapView from "../components/MapView";
 import BottomSheet from "../components/BottomSheet";
 import MapFocusContext from "../components/MapFocusContext";
 import PlacePin from "../components/PlacePin";
 import PlaceMarker from "../components/PlaceMarker";
 import { shadowColor, spBlue } from "../constants/Colors";
-import { NavigationActions } from "react-navigation";
 
 const initialRegion = {
-  latitude: 50.06136,
+  latitude: 50.0625,
   longitude: 19.936,
   latitudeDelta: 0.019,
   longitudeDelta: 0.019
@@ -53,15 +54,30 @@ export default function MapScreen(props: NavigationStackScreenProps) {
     ({ nativeEvent: { id } }) => focus(id),
     [focus]
   );
+  const initialPlaceKey = React.useMemo(() => {
+    for (let route of props.navigation.state.routes) {
+      const placeKey = props.navigation.getChildNavigation(route.key).getParam('placeKey');
+      if (placeKey) {
+        return placeKey;
+      }
+    }
+  }, []);
   const initialRegionOrPlace = {
     ...initialRegion,
-    ...(props.navigation.getParam("placeKey")
-      ? details[props.navigation.getParam("placeKey")].location
+    ...(initialPlaceKey
+      ? details[initialPlaceKey].location
       : {})
   };
+  const isLandscape = useLandscapeScreen();
   return (
-    <View style={styles.fullHeight}>
+    <View
+      style={[
+        styles.fullHeight,
+        isLandscape && { flexDirection: "row-reverse" }
+      ]}
+    >
       <MapView
+        initialSelectedIdentifier={initialPlaceKey}
         showsUserLocation
         style={styles.fullHeight}
         initialRegion={initialRegionOrPlace}
@@ -72,7 +88,7 @@ export default function MapScreen(props: NavigationStackScreenProps) {
           <PlaceMarker
             key={key}
             identifier={key}
-            initialSelected={key === props.navigation.getParam("placeKey")}
+            initialSelected={key === initialPlaceKey}
             ref={refs.current[key] || (refs.current[key] = React.createRef())}
           />
         ))}

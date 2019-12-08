@@ -1,12 +1,17 @@
 import React, { RefObject } from "react";
 import { View, Platform } from "react-native";
-import { Transition, Transitioning, TransitioningView } from "react-native-reanimated";
+import {
+  Transition,
+  Transitioning,
+  TransitioningView
+} from "react-native-reanimated";
 
 import PlacePin from "../components/PlacePin";
-import Marker, { MarkerProps } from './Marker';
+import Marker, { MarkerProps } from "./Marker";
 import details from "../details";
 import { white, spBlue } from "../constants/Colors";
 import { withNavigation, NavigationInjectedProps } from "react-navigation";
+import { BodyText, SmallFatText } from "./Text";
 
 export interface PlaceMarkerProps extends MarkerProps {
   markerRef: React.RefObject<Marker>;
@@ -61,9 +66,17 @@ function PlaceMarker(props: PlaceMarkerProps) {
       <Transitioning.View
         transition={transition}
         ref={transitioningViewRef}
-        style={{ width: 64, height: 64, justifyContent: "flex-end", alignItems: "center" }}
+        style={{
+          width: 64,
+          height: 64,
+          justifyContent: "flex-end",
+          alignItems: "center"
+        }}
       >
         <PlacePin size={size} {...details[identifier].pin} />
+        {/*<SmallFatText style={{ position: "absolute", bottom: -18, textShadowColor: white, textShadowRadius: 3 }}>
+          {details[identifier].abbreviation}
+        </SmallFatText>*/}
       </Transitioning.View>
     </Marker>
   );

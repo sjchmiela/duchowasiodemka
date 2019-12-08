@@ -1,4 +1,5 @@
 export const sp = { 
+  abbreviation: "SP",
   orderName: "Pijarzy",
   placeName: "Kościół Przemienienia Pańskiego",
   address: "ul. Pijarska",

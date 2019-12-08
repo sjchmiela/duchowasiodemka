@@ -20,11 +20,13 @@ import {
 } from "../constants/Colors";
 import DirectionIcon from "../components/DirectionIcon";
 import { PrimaryButton } from "../components/Button";
+import useLandscapeScreen from "../hooks/useLandscapeScreen";
 
 export default function PromptScreen(props: NavigationStackScreenProps) {
+  const isLandscape = useLandscapeScreen();
   return (
     <View style={{ flex: 1 }}>
-      <CardHeader bordered={Platform.OS === "web"} />
+      <CardHeader bordered={!isLandscape && Platform.OS === "web"} />
       <View style={{ paddingHorizontal: 10 }}>
         <BigFatTitle style={{}}>Duchowa Siódemka</BigFatTitle>
         <PrimaryButton title="Pusty przycisk" style={{ marginBottom: 10 }} />

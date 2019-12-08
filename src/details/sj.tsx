@@ -3,6 +3,7 @@ import React from "react";
 import Markdown from "react-native-simple-markdown";
 export const sj = {
   orderName: "Jezuici",
+  abbreviation: "SJ",
   placeName: "Kościół św. Barbary",
   address: "Mały Rynek",
   location: {

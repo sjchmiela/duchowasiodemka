@@ -1,4 +1,5 @@
 export const ocarm = {
+  abbreviation: "OCarm",
   orderName: "Karmelici",
   placeName: "Kościół Nawiedzenia NMP",
   address: "ul. Karmelicka",

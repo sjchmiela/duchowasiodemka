@@ -1,4 +1,5 @@
 export const ofm = {
+  abbreviation: "OFMCap",
   orderName: "Kapucyni",
   placeName: "Kościół Zwiastowania NMP",
   address: "ul. Loretańska",

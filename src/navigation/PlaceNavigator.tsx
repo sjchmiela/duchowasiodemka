@@ -44,6 +44,7 @@ const DetailsNavigator = createMaterialTopTabNavigator(
 );
 
 export default function PlaceNavigator(props: NavigationStackScreenProps) {
+  console.warn('PlaceNavigator', props.navigation.getParam('placeKey'))
   return (
     <PlaceScreen {...props}>
       <DetailsNavigator navigation={props.navigation} />

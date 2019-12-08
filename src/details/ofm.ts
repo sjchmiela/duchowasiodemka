@@ -1,4 +1,5 @@
 export const ofm = {
+  abbreviation: "OFM",
   orderName: "Reformaci",
   placeName: "Kościół św. Kazimierza Królewicza",
   address: "ul. Reformacka",

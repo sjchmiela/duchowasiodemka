@@ -67,7 +67,7 @@ export default withNavigation(function MapView(props: MapViewProps) {
   );
   const [selectedMarkerId, setSelectedMarkerId] = React.useState();
 
-  const selectedMarkerIdRef = React.useRef(props.navigation.getParam('placeKey'));
+  const selectedMarkerIdRef = React.useRef(props.initialSelectedIdentifier);
 
   const onPress = React.useCallback(
     id => {

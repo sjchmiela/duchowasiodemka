@@ -1,4 +1,5 @@
 export const op = { 
+  abbreviation: "OP",
   orderName: "Dominikanie",
   placeName: "Kościół Świętej Trójcy",
   address: "ul. Stolarska",

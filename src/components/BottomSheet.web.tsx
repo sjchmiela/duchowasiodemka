@@ -3,16 +3,19 @@ import {
   StyleSheet,
   View,
   TouchableWithoutFeedback,
-  TouchableOpacity
+  TouchableOpacity,
+  Text
 } from "react-native";
 import BottomSheet from "reanimated-bottom-sheet";
 import { LinearGradient } from "expo-linear-gradient";
-import { shadowColor, white } from "../constants/Colors";
+import { NavigationInjectedProps } from "react-navigation";
+
+import { LandscapeScreenQuery, PortraitScreenQuery } from "../hooks/useLandscapeScreen";
 import MapFocusContext from "./MapFocusContext";
 import { StrongText } from "./Text";
-
 import { BottomSheetProps } from "./BottomSheet";
-import { NavigationInjectedProps } from "react-navigation";
+
+import { shadowColor, white, spBlue } from "../constants/Colors";
 
 interface State {
   state: "expanded" | "collapsed";
@@ -78,28 +81,35 @@ export default class BottomSheetWeb extends React.Component<
   render() {
     return (
       <>
-        <View
-          style={
-            this.state.state === "expanded"
-              ? [StyleSheet.absoluteFill, styles.backdrop]
-              : []
-          }
-          pointerEvents="box-none"
-        >
-          <View
-            style={[
-              this.props.style,
-              styles.container,
-              this.state.state === "collapsed" && styles.containerCollapsed,
-              this.state.state === "expanded" && styles.containerExpanded
-            ]}
-          >
-            {this.state.state === "expanded" && this.renderCollapseButton()}
+        <LandscapeScreenQuery>
+          <View style={styles.landscapeContainer}>
             {this.props.children}
-            {this.state.state === "collapsed" && this.renderExpandButton()}
           </View>
-        </View>
-        <View style={[this.state.state === "expanded" && { height: 300 }]} />
+        </LandscapeScreenQuery>
+        <PortraitScreenQuery>
+          <View
+            style={
+              this.state.state === "expanded"
+                ? [StyleSheet.absoluteFill, styles.backdrop]
+                : []
+            }
+            pointerEvents="box-none"
+          >
+            <View
+              style={[
+                this.props.style,
+                styles.container,
+                this.state.state === "collapsed" && styles.containerCollapsed,
+                this.state.state === "expanded" && styles.containerExpanded
+              ]}
+            >
+              {this.state.state === "expanded" && this.renderCollapseButton()}
+              {this.props.children}
+              {this.state.state === "collapsed" && this.renderExpandButton()}
+            </View>
+          </View>
+          <View style={[this.state.state === "expanded" && { height: 200 }]} />
+        </PortraitScreenQuery>
       </>
     );
   }
@@ -110,6 +120,15 @@ const styles = StyleSheet.create({
     zIndex: 1000,
     backgroundColor: "rgba(0, 0, 0, 0.7)"
   },
+  landscapeContainer: {
+    width: 400,
+    backgroundColor: white,
+    shadowColor: spBlue,
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    borderLeftColor: spBlue,
+    borderLeftWidth: 10
+  },
   container: {
     shadowColor: shadowColor,
     shadowOpacity: 0.1,
@@ -118,7 +137,7 @@ const styles = StyleSheet.create({
   },
   containerCollapsed: {
     flex: 1,
-    height: 300
+    height: 200
   },
   containerExpanded: {
     position: "absolute",
