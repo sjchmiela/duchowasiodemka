@@ -32,9 +32,9 @@ export default function PromptScreen(props: NavigationStackScreenProps) {
   return (
     <View style={{ flex: 1 }}>
       {!isLandscape && <CardHeader bordered={!isLandscape} />}
-      <View style={{ paddingHorizontal: 10, paddingTop: isLandscape ? 10 : 0 }}>
+      <View style={{ paddingHorizontal: 10, paddingTop: isLandscape ? 10 : 0, paddingBottom: 10 }}>
         <BigFatTitle style={{}}>Duchowa Siódemka</BigFatTitle>
-        <PrimaryButton title="Pusty przycisk" style={{ marginBottom: 10 }} />
+        {/* <PrimaryButton title="Pusty przycisk" style={{ marginBottom: 10 }} /> */}
       </View>
       <ScrollView
         style={{
