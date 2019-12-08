@@ -37,7 +37,9 @@ export default function PlaceScreen(props: NavigationStackScreenProps) {
   const isLandscape = useLandscapeScreen();
   return (
     <View style={styles.fullHeight}>
-      <CardHeader bordered={!isLandscape} /* tintColor={placeDetails.pin.pinColor} */ />
+      <CardHeader
+        bordered={!isLandscape} /* tintColor={placeDetails.pin.pinColor} */
+      />
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.fullHeight}>
@@ -50,22 +52,18 @@ export default function PlaceScreen(props: NavigationStackScreenProps) {
         </View>
         <View style={styles.buttonContainer}>
           <PrimaryButton
-            onPress={async () => {
-              if (await Linking.canOpenURL("comgooglemaps://") && Platform.OS !== "web") {
-                Linking.openURL(
-                  `comgooglemaps://?daddr=${encodeURIComponent(
-                    placeName
-                  )}&directionsmode=walking`
-                );
-              } else {
-                Linking.openURL(
-                  `http://maps.apple.com/?daddr=${encodeURIComponent(
-                    placeName
-                  )}&dirflg=w`
-                );
-              }
+            onPress={() => {
+              Linking.openURL(
+                `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                  placeName
+                )}&travelmode=walking&destination_place_id=${
+                  placeDetails.googlePlaceId
+                }&dir_action=navigate`
+              );
             }}
-            renderIcon={props => <MaterialIcons {...props} name="directions" size={26} />}
+            renderIcon={props => (
+              <MaterialIcons {...props} name="directions" size={26} />
+            )}
             title="Prowadź"
             style={styles.button}
           />
@@ -90,7 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   title: {
-    marginBottom: 4,
+    marginBottom: 4
   },
   container: {
     // flex: 1,
@@ -102,6 +100,6 @@ const styles = StyleSheet.create({
     flex: 1
   },
   button: {
-    flex: 1,
-  },
+    flex: 1
+  }
 });

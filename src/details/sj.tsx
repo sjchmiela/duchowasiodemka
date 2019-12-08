@@ -6,6 +6,7 @@ export const sj = {
   abbreviation: "SJ",
   placeName: "Kościół św. Barbary",
   address: "Mały Rynek",
+  googlePlaceId: "ChIJY2nEJxJbFkcRPftx79VCKeg",
   location: {
     latitude: 50.061333,
     longitude: 19.939861

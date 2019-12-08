@@ -18,17 +18,14 @@ export default class MarkerWeb extends React.Component<
   componentDidUpdate(prevProps, prevState) {
     if (prevState.selected !== this.state.selected) {
       if (this.state.selected) {
-        console.log('calling onSelect');
         this.props.onSelect();
       } else {
-        console.log('calling onDeselect');
         this.props.onDeselect();
       }
     }
   }
 
   public hideCallout = () => {
-    console.log('called hideCallout');
     this.setState({ selected: false });
   };
 

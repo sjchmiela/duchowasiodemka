@@ -2,6 +2,7 @@ export const ocarm = {
   abbreviation: "OCarm",
   orderName: "Karmelici",
   placeName: "Kościół Nawiedzenia NMP",
+  googlePlaceId: "ChIJu5oYJglbFkcReyUITf3GNCQ",
   address: "ul. Karmelicka",
   location: {
     latitude: 50.065167,

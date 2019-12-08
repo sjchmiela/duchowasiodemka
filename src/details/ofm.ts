@@ -3,6 +3,7 @@ export const ofm = {
   orderName: "Reformaci",
   placeName: "Kościół św. Kazimierza Królewicza",
   address: "ul. Reformacka",
+  googlePlaceId: "ChIJH6fvAQ9bFkcRt1s6tQl7C2w",
   location: {
     latitude: 50.064889,
     longitude: 19.936306

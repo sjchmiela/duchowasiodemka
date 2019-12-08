@@ -29,7 +29,6 @@ export default function MapScreen(props: NavigationStackScreenProps) {
   const refs = React.useRef<{ [key: string]: React.RefObject<Marker> }>({});
   const blur = React.useCallback(
     (key: string | undefined) => {
-      // console.log(key, refs);
       if (key && refs.current[key] && refs.current[key].current) {
         refs.current[key].current.hideCallout();
       }

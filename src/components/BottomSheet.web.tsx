@@ -10,7 +10,10 @@ import BottomSheet from "reanimated-bottom-sheet";
 import { LinearGradient } from "expo-linear-gradient";
 import { NavigationInjectedProps } from "react-navigation";
 
-import { LandscapeScreenQuery, PortraitScreenQuery } from "../hooks/useLandscapeScreen";
+import {
+  LandscapeScreenQuery,
+  PortraitScreenQuery
+} from "../hooks/useLandscapeScreen";
 import MapFocusContext from "./MapFocusContext";
 import { StrongText } from "./Text";
 import { BottomSheetProps } from "./BottomSheet";
@@ -52,8 +55,14 @@ export default class BottomSheetWeb extends React.Component<
     }
   }
 
-  expand = () => this.setState({ state: "expanded" });
-  collapse = () => this.setState({ state: "collapsed" });
+  expand = (evt) => {
+    evt && evt.preventDefault();
+    this.setState({ state: "expanded" });
+  }
+  collapse = evt => {
+    evt && evt.preventDefault();
+    this.setState({ state: "collapsed" });
+  };
 
   renderExpandButton = () => (
     <LinearGradient
@@ -82,9 +91,7 @@ export default class BottomSheetWeb extends React.Component<
     return (
       <>
         <LandscapeScreenQuery>
-          <View style={styles.landscapeContainer}>
-            {this.props.children}
-          </View>
+          <View style={styles.landscapeContainer}>{this.props.children}</View>
         </LandscapeScreenQuery>
         <PortraitScreenQuery>
           <View

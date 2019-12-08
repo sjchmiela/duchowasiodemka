@@ -7,7 +7,7 @@ import { BodyText } from "../components/Text";
 
 export default function createPartScreen(key: string, label: string) {
   function PartScreen(props: NavigationTabScreenProps) {
-    const placeKey = props.navigation.getParam("placeKey", "sp");
+    const placeKey = props.navigation.dangerouslyGetParent().getParam("placeKey", "sp");
     const placeDetails = details[placeKey];
     const partsToRender = placeDetails[key];
     return (

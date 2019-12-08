@@ -8,6 +8,7 @@ import PromptScreen from "../screens/PromptScreen";
 import PlaceNavigator from "./PlaceNavigator";
 
 import MapScreen from "../screens/MapScreen";
+import { Platform } from "@unimodules/core";
 
 const BottomSheetNavigator = createStackNavigator(
   {
@@ -23,11 +24,16 @@ const BottomSheetNavigator = createStackNavigator(
   {
     // initialRouteName: "Place",
     mode: "modal",
-    headerMode: "null",
+    headerMode: "none",
     defaultNavigationOptions: {
       gesturesEnabled: false
     },
-    cardOverlayEnabled: true
+    cardOverlayEnabled: true,
+    transitionConfig: Platform.OS === "web" && (() => ({
+      transitionSpec: {
+        duration: 0,
+      },
+    })),
   }
 );
 

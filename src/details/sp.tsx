@@ -3,6 +3,7 @@ export const sp = {
   orderName: "Pijarzy",
   placeName: "Kościół Przemienienia Pańskiego",
   address: "ul. Pijarska",
+  googlePlaceId: "ChIJH7SN2w9bFkcRwQqQ2ORylAY",
   location: {
     latitude: 50.064861,
     longitude: 19.939917

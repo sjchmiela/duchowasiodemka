@@ -3,6 +3,7 @@ export const op = {
   orderName: "Dominikanie",
   placeName: "Kościół Świętej Trójcy",
   address: "ul. Stolarska",
+  googlePlaceId: "ChIJ6QaJXBJbFkcR57275h4QcMs",
   location: {
     latitude: 50.059289,
     longitude: 19.939414

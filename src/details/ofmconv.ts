@@ -3,6 +3,7 @@ export const ofmconv = {
   orderName: "Franciszkanie",
   placeName: "Kościół św. Franciszka z Asyżu",
   address: "pl. Wszystkich Świętych",
+  googlePlaceId: "ChIJn0aofxJbFkcRXSsozsJzLvY",
   location: {
     latitude: 50.059222,
     longitude: 19.936111

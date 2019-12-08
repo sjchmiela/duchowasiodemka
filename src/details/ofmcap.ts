@@ -3,6 +3,7 @@ export const ofm = {
   orderName: "Kapucyni",
   placeName: "Kościół Zwiastowania NMP",
   address: "ul. Loretańska",
+  googlePlaceId: "ChIJ51StCwxbFkcRYDX1PBOTIK0",
   location: {
     latitude: 50.061944,
     longitude: 19.93
