@@ -11,7 +11,12 @@ import {
 } from "react-native";
 import { NavigationStackScreenProps } from "react-navigation-stack";
 import CardHeader from "../components/CardHeader";
-import { BodyText, BigFatTitle, StrongText, SmallFatText } from "../components/Text";
+import {
+  BodyText,
+  BigFatTitle,
+  StrongText,
+  SmallFatText
+} from "../components/Text";
 import {
   lightSpBlue,
   touchableBackgroundColor,
@@ -21,14 +26,13 @@ import {
 import DirectionIcon from "../components/DirectionIcon";
 import { PrimaryButton } from "../components/Button";
 import useLandscapeScreen from "../hooks/useLandscapeScreen";
-import { Updates } from "expo";
 
 export default function PromptScreen(props: NavigationStackScreenProps) {
   const isLandscape = useLandscapeScreen();
   return (
     <View style={{ flex: 1 }}>
-      <CardHeader bordered={!isLandscape && Platform.OS === "web"} />
-      <View style={{ paddingHorizontal: 10 }}>
+      {!isLandscape && <CardHeader bordered={!isLandscape} />}
+      <View style={{ paddingHorizontal: 10, paddingTop: isLandscape ? 10 : 0 }}>
         <BigFatTitle style={{}}>Duchowa Siódemka</BigFatTitle>
         <PrimaryButton title="Pusty przycisk" style={{ marginBottom: 10 }} />
       </View>

@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Bold',
   },
   italicText: {
-    fontFamily: 'Inter-italic'
+    fontFamily: 'Inter-Italic'
   },
   bigFatTitle: {
     fontFamily: 'Inter-ExtraBold',

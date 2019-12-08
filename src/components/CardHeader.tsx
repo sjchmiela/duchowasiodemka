@@ -11,10 +11,13 @@ export default function CardHeader(props: CardHeaderProps) {
   const { tintColor, bordered } = props;
   return (
     <View
+      {...props}
+      pointerEvents="none"
       style={[
         styles.container,
         bordered && styles.bordered,
-        tintColor && { shadowColor: tintColor, borderTopColor: tintColor }
+        tintColor && { shadowColor: tintColor, borderTopColor: tintColor },
+        props.style
       ]}
     >
       {Platform.OS !== "web" && <View

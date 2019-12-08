@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   textPart: {
     marginTop: 8,
     marginBottom: 14,
-    marginHorizontal: 14
+    marginHorizontal: 14,
   },
   labelFromReactNativeTabView: {
     textAlign: "center",

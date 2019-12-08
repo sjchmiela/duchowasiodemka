@@ -5,7 +5,12 @@ import { spBlue, white } from "../constants/Colors";
 
 export default function CloseButton(props: TouchableOpacityProps) {
   return (
-    <TouchableOpacity {...props}>
+    <TouchableOpacity
+    hitSlop={{ top: 8, right: 8, left: 8, bottom: 8 }}
+     {...props} style={[
+      { backgroundColor: "rgba(255, 255, 255, 0.5)", padding: 2, borderRadius: 32 } ,
+      props.style
+    ]}>
       <Svg width="24" height="24">
         <Rect width="24" height="24" fill="none" rx="0" ry="0" />
         <Path
