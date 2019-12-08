@@ -50,7 +50,7 @@ export default function PromptScreen(props: NavigationStackScreenProps) {
           kolejni święci, jak choćby założyciel pijarów, św. Józef Kalasancjusz.
           Pragniemy ją zaproponować mieszkańcom, pielgrzymom i turystom Krakowa.
           Idea nawiedzanie Siedmiu Kościołów w obrębie Starego Miasta, wokół
-          krakowskich Plan zawiera elementy turystycznego wędrowania,
+          krakowskich Plant zawiera elementy turystycznego wędrowania,
           estetycznego zwiedzania i duchowego pielgrzymowania. Łączy więc w
           sobie wymiar fizyczny, kulturalny i religijny. Motywem przewodnim jest
           odwołanie do tradycji duchowej danego kościoła zawartej nie tylko w

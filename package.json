@@ -1,4 +1,5 @@
 {
+  "description": "Tradycja odwiedzania Siedmiu Kościołów znana była już w średniowieczu w Rzymie. W XVI w. forma takiego pielgrzymowania odrodziła się w Wiecznym Mieście za sprawą św. Filipa Nereusza. Praktykowali ją kolejni święci, jak choćby założyciel pijarów, św. Józef Kalasancjusz. Pragniemy ją zaproponować mieszkańcom, pielgrzymom i turystom Krakowa.",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
