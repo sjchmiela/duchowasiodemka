@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "51d4b79efaa3dc967b4b",
-    "url": "/static/js/app.cadd9f50.chunk.js"
+    "revision": "7998fdb27ded4f1d613b",
+    "url": "/static/js/app.5276b92d.chunk.js"
   },
   {
     "revision": "fcd2ca09e1d83038dbb1",
@@ -76,24 +76,24 @@ self.__precacheManifest = [
     "url": "/./fonts/SimpleLineIcons.ttf"
   },
   {
-    "revision": "d0c694b562b2208635f250762cd7fc79",
-    "url": "/serve.json"
-  },
-  {
     "revision": "7a7bc7ead25db795e58b336f04d2624c",
     "url": "/favicon.ico"
+  },
+  {
+    "revision": "d41d8cd98f00b204e9800998ecf8427e",
+    "url": "/.well-known/apple-app-site-association"
   },
   {
     "revision": "48c7ed4e7da9792af288a60d7242d615",
     "url": "/expo-service-worker.js"
   },
   {
-    "revision": "692037903fcf22786d8130c25a48fa3e",
-    "url": "/CNAME"
+    "revision": "d0c694b562b2208635f250762cd7fc79",
+    "url": "/serve.json"
   },
   {
-    "revision": "d41d8cd98f00b204e9800998ecf8427e",
-    "url": "/.well-known/apple-app-site-association"
+    "revision": "692037903fcf22786d8130c25a48fa3e",
+    "url": "/CNAME"
   },
   {
     "revision": "28dd66d4d109fbb80e4b4b789a14f3b5",
@@ -160,7 +160,7 @@ self.__precacheManifest = [
     "url": "/apple/splash/icon_828x1792.png"
   },
   {
-    "revision": "53b2bb36342ae146547e4b0614dac652",
+    "revision": "d1a90d533a2d380ac26ccb37272a3d1c",
     "url": "/index.html"
   },
   {
@@ -172,8 +172,8 @@ self.__precacheManifest = [
     "url": "/expo-service-worker.js.gz"
   },
   {
-    "revision": "3dcfbb23ec3fb68ad9ba960a1f0a647f",
-    "url": "/static/js/app.cadd9f50.chunk.js.gz"
+    "revision": "61c74498625edd30ddc9daa2e278e224",
+    "url": "/static/js/app.5276b92d.chunk.js.gz"
   },
   {
     "revision": "b06253819f06476838a1eee127439fd2",
