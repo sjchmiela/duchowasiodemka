@@ -7,7 +7,7 @@ import mapboxgl from "mapbox-gl";
 import { withNavigation } from "react-navigation";
 
 const accessToken =
-  "pk.eyJ1Ijoic2pjaG1pZWxhIiwiYSI6ImNqMnJhYWppMzAwM3Yyd3FwMHZlYXZzYmsifQ.aKPYfTV3FLMD_Je7XgXv4w";
+  "pk.eyJ1Ijoic2pjaG1pZWxhIiwiYSI6ImNrM3k1MmNlMDA0dDEza3AzNzg2eXZyMHYifQ.CHAowiyVdRX2qF1AkK6dlA";
 const Map = ReactMapboxGl({
   accessToken,
   logoPosition: "top-right",
