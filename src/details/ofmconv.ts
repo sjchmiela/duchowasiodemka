@@ -9,6 +9,7 @@ export const ofmconv = {
     longitude: 19.936111
   },
   imageSource: require('../../assets/ofmconv.jpg'),
+  imageSize: { width: 2066, height: 1350 },
   pin: {
     pinColor: "#b78850",
     graphicColor: "#b78850"

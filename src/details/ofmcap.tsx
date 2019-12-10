@@ -13,6 +13,7 @@ export const ofm = {
     longitude: 19.93
   },
   imageSource: require('../../assets/ofmcap.jpg'),
+  imageSize: { width: 2400, height: 1141 },
   pin: {
     graphicColor: "#5f3d29",
     pinColor: "#5f3d29"

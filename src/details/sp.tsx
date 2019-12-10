@@ -13,6 +13,7 @@ export const sp = {
     graphicColor: "#ef7f1a"
   },
   imageSource: require('../../assets/sp.jpg'),
+  imageSize: { width: 2400, height: 1600 },
   colors: ["#283957", "#ef7f1a", "#fff"],
   url: "https://www.krypta.pijarzy.pl/",
   history: [

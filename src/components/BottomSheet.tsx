@@ -12,6 +12,13 @@ import {
 export interface BottomSheetProps
   extends NavigationInjectedProps<{ expanded: number }> {}
 
+let collapsedHeight = 160;
+let expandedHeight = Dimensions.get("window").height - 64;
+if (Dimensions.get('window').height > 600) {
+  collapsedHeight = 300;
+  expandedHeight = Dimensions.get("window").height - 120;
+}
+
 export default class BottomSheet extends React.Component<BottomSheetProps> {
   public static renderHeader = () => <View style={styles.header} />;
   sheetRef: React.RefObject<RABottomSheet> = React.createRef();
@@ -37,7 +44,7 @@ export default class BottomSheet extends React.Component<BottomSheetProps> {
             renderContent={this.renderContent}
             renderHeader={BottomSheet.renderHeader}
             initialSnap={navigation.getParam("expanded", 0)}
-            snapPoints={[320, Dimensions.get("window").height - 100]}
+            snapPoints={[collapsedHeight, expandedHeight]}
           />
         </PortraitScreenQuery>
       </>
@@ -69,6 +76,6 @@ const styles = StyleSheet.create({
     height: StyleSheet.hairlineWidth
   },
   panel: {
-    height: Dimensions.get("window").height - 100
+    height: expandedHeight
   }
 });

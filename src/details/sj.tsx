@@ -12,6 +12,7 @@ export const sj = {
     longitude: 19.939861
   },
   imageSource: require('../../assets/sj.jpg'),
+  imageSize: { width: 2400, height: 1423 },
   pin: {
     pinColor: "#ad172b",
     graphicColor: "#ad172b"

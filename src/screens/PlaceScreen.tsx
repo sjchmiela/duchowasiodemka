@@ -7,7 +7,8 @@ import {
   TouchableHighlight,
   Platform,
   Image,
-  ImageBackground
+  Dimensions,
+  // ImageBackground
 } from "react-native";
 import { NavigationStackScreenProps } from "react-navigation-stack";
 import { Octicons, MaterialIcons } from "@expo/vector-icons";
@@ -15,6 +16,7 @@ import { Octicons, MaterialIcons } from "@expo/vector-icons";
 import details from "../details";
 import CardHeader from "../components/CardHeader";
 import CloseButton from "../components/CloseButton";
+import ImageBackground from "../components/ImageBackground";
 import LocationButton from "../components/LocationButton";
 import MapFocusContext from "../components/MapFocusContext";
 import DirectionIcon from "../components/DirectionIcon";
@@ -33,6 +35,11 @@ import {
 } from "../constants/Colors";
 import useLandscapeScreen from "../hooks/useLandscapeScreen";
 import { LinearGradient } from "expo-linear-gradient";
+
+let imageBackgroundHeight = 130;
+if (Dimensions.get('window').height > 600) {
+  imageBackgroundHeight = 220;
+}
 
 export default function PlaceScreen(props: NavigationStackScreenProps) {
   const placeKey = props.navigation.getParam("placeKey", "sp");
@@ -53,6 +60,8 @@ export default function PlaceScreen(props: NavigationStackScreenProps) {
           uri:
             "https://dotravel.com/uploads/products/1230/1535382520/la-sagrada-familia-tickets-with-fast-track-access.jpg"
         }}
+        {...placeDetails.imageSize}
+        containerHeight={imageBackgroundHeight}
         style={styles.header}
       >
         <LinearGradient
@@ -108,7 +117,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     paddingHorizontal: 14,
-    height: 210,
+    height: imageBackgroundHeight,
     justifyContent: "flex-end",
     alignItems: "flex-end",
     paddingVertical: 10,

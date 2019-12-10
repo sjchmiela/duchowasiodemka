@@ -4,7 +4,8 @@ import {
   View,
   TouchableWithoutFeedback,
   TouchableOpacity,
-  Text
+  Text,
+  Dimensions
 } from "react-native";
 import BottomSheet from "reanimated-bottom-sheet";
 import { LinearGradient } from "expo-linear-gradient";
@@ -28,6 +29,11 @@ function isExpandedBasedOnNavigation(
   navigation: NavigationInjectedProps<{ expanded: number }>["navigation"]
 ) {
   return Boolean(navigation.getParam("expanded", 0));
+}
+
+let collapsedHeight = 200;
+if (Dimensions.get('window').height > 600) {
+  collapsedHeight = 300;
 }
 
 export default class BottomSheetWeb extends React.Component<
@@ -98,7 +104,9 @@ export default class BottomSheetWeb extends React.Component<
             style={
               this.state.state === "expanded"
                 ? [StyleSheet.absoluteFill, styles.backdrop]
-                : []
+                : [
+                  { height: collapsedHeight }
+                ]
             }
             pointerEvents="box-none"
           >
@@ -115,7 +123,7 @@ export default class BottomSheetWeb extends React.Component<
               {this.state.state === "collapsed" && this.renderExpandButton()}
             </View>
           </View>
-          <View style={[this.state.state === "expanded" && { height: 200 }]} />
+          <View style={[this.state.state === "expanded" && { height: collapsedHeight }]} />
         </PortraitScreenQuery>
       </>
     );
@@ -144,7 +152,7 @@ const styles = StyleSheet.create({
   },
   containerCollapsed: {
     flex: 1,
-    height: 200
+    height: collapsedHeight
   },
   containerExpanded: {
     position: "absolute",
@@ -166,7 +174,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     paddingHorizontal: 20,
-    paddingVertical: 16,
+    paddingVertical: Dimensions.get("window").height > 600 ? 16 : 10,
     textAlign: "center"
   },
   collapseButtonText: {

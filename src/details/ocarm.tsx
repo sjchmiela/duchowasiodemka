@@ -13,6 +13,7 @@ export const location = {
 };
 
 export const imageSource = require('../../assets/ocarm.jpg');
+export const imageSize = { width: 2400, height: 1628 };
 
 export function History() {
   return (
