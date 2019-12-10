@@ -12,6 +12,7 @@ export const ofm = {
     latitude: 50.061944,
     longitude: 19.93
   },
+  imageSource: require('../../assets/ofmcap.jpg'),
   pin: {
     graphicColor: "#5f3d29",
     pinColor: "#5f3d29"

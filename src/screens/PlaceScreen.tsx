@@ -49,7 +49,7 @@ export default function PlaceScreen(props: NavigationStackScreenProps) {
         />
       )}
       <ImageBackground
-        source={{
+        source={placeDetails.imageSource || {
           uri:
             "https://dotravel.com/uploads/products/1230/1535382520/la-sagrada-familia-tickets-with-fast-track-access.jpg"
         }}

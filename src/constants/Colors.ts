@@ -4,6 +4,7 @@ export const tintColor = "#283957";
 export const spOrange = "#EF7F1A";
 export const onSpOrange = "#FFFFFF";
 export const spBlue = "#283957";
+export const graySpBlue = "#8c97a9";
 export const spBlueFromOrange = "#1A8AEF";
 export const onSpBlue = "#FFFFFF";
 export const veryDarkSpBlue = "#040609";

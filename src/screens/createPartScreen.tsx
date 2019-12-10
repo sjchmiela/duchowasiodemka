@@ -9,7 +9,8 @@ import {
 } from "react-native";
 import Animated from "react-native-reanimated";
 import details from "../details";
-import { BodyText } from "../components/Text";
+import { BodyText, SmallFatText } from "../components/Text";
+import { lightSpBlue, graySpBlue } from "../constants/Colors";
 
 export default function createPartScreen(key: string, label: string) {
   function PartScreen(props: NavigationTabScreenProps) {
@@ -36,6 +37,7 @@ export default function createPartScreen(key: string, label: string) {
             )
           )}
         </>
+        <SmallFatText style={[styles.textPart, styles.note]}>Wykorzystano materiały ze strony internetowej Zakonu.</SmallFatText>
       </ScrollView>
     );
   }
@@ -76,6 +78,9 @@ const styles = StyleSheet.create({
     marginTop: 8,
     marginBottom: 14,
     marginHorizontal: 14,
+  },
+  note: {
+    color: graySpBlue
   },
   labelFromReactNativeTabView: {
     textAlign: "center",

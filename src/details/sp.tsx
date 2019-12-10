@@ -12,6 +12,7 @@ export const sp = {
     pinColor: "#ef7f1a",
     graphicColor: "#ef7f1a"
   },
+  imageSource: require('../../assets/sp.jpg'),
   colors: ["#283957", "#ef7f1a", "#fff"],
   url: "https://www.krypta.pijarzy.pl/",
   history: [

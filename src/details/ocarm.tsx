@@ -12,6 +12,8 @@ export const location = {
   longitude: 19.931889
 };
 
+export const imageSource = require('../../assets/ocarm.jpg');
+
 export function History() {
   return (
     <Text>
