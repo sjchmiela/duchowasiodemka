@@ -20,7 +20,7 @@ export default function CardHeader(props: CardHeaderProps) {
         props.style
       ]}
     >
-      {Platform.OS !== "web" && <View
+      {Platform.OS === "ios" && <View
         style={[styles.puller, tintColor && { backgroundColor: tintColor }]}
       />}
     </View>
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     shadowOffset: { width: 0, height: -8 },
     backgroundColor: white,
-    paddingVertical: 8,
-    alignItems: "center"
+    alignItems: "center",
+    paddingTop: 8,
   },
   bordered: {
     borderTopColor: spBlue,
@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
   },
   puller: {
     height: 4,
+    marginBottom: 8,
     width: 32,
     backgroundColor: spBlue,
     borderRadius: 4

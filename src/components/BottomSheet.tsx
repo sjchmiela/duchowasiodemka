@@ -1,51 +1,131 @@
 import React from "react";
-import RABottomSheet from "reanimated-bottom-sheet";
-import { Dimensions, StyleSheet, View, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  View,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  Text,
+  Dimensions,
+  Platform
+} from "react-native";
+import BottomSheet from "reanimated-bottom-sheet";
+import { LinearGradient } from "expo-linear-gradient";
+import Constants from "expo-constants";
 import { NavigationInjectedProps } from "react-navigation";
 
-import { shadowColor, spBlue, white } from "../constants/Colors";
 import {
   LandscapeScreenQuery,
   PortraitScreenQuery
 } from "../hooks/useLandscapeScreen";
+import MapFocusContext from "./MapFocusContext";
+import { StrongText } from "./Text";
+import { BottomSheetProps } from "./BottomSheet.ios";
 
-export interface BottomSheetProps
-  extends NavigationInjectedProps<{ expanded: number }> {}
+import { shadowColor, white, spBlue } from "../constants/Colors";
 
-let collapsedHeight = 160;
-let expandedHeight = Dimensions.get("window").height - 64;
-if (Dimensions.get('window').height > 600) {
-  collapsedHeight = 300;
-  expandedHeight = Dimensions.get("window").height - 120;
+interface State {
+  state: "expanded" | "collapsed";
 }
 
-export default class BottomSheet extends React.Component<BottomSheetProps> {
-  public static renderHeader = () => <View style={styles.header} />;
-  sheetRef: React.RefObject<RABottomSheet> = React.createRef();
+function isExpandedBasedOnNavigation(
+  navigation: NavigationInjectedProps<{ expanded: number }>["navigation"]
+) {
+  return Boolean(navigation.getParam("expanded", 0));
+}
 
-  expand = () => this.sheetRef.current && this.sheetRef.current.snapTo(1);
-  collapse = () => this.sheetRef.current && this.sheetRef.current.snapTo(0);
+let collapsedHeight = 200;
+if (Dimensions.get('window').height > 600) {
+  collapsedHeight = 300;
+}
 
-  renderContent = () => <View style={styles.panel}>{this.props.children}</View>;
+export default class BottomSheetWeb extends React.Component<
+  BottomSheetProps,
+  State
+> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      state: isExpandedBasedOnNavigation(props.navigation)
+        ? "expanded"
+        : "collapsed"
+    };
+  }
+
+  componentDidUpdate() {
+    const isExpandedBasedOnState = this.state.state === "expanded";
+    if (
+      isExpandedBasedOnNavigation(this.props.navigation) !=
+      isExpandedBasedOnState
+    ) {
+      this.props.navigation.setParams({
+        expanded: isExpandedBasedOnState ? 1 : undefined
+      });
+    }
+  }
+
+  expand = (evt) => {
+    evt && evt.preventDefault();
+    this.setState({ state: "expanded" });
+  }
+  collapse = evt => {
+    evt && evt.preventDefault();
+    this.setState({ state: "collapsed" });
+  };
+
+  renderExpandButton = () => (
+    <LinearGradient
+      start={[0, 0]}
+      locations={[0, 0.75]}
+      end={[0, 1]}
+      colors={["#ffffff00", "#ffffffff"]}
+      style={styles.gradient}
+      pointerEvents="box-none"
+    >
+      <TouchableOpacity onPress={this.expand} style={styles.button}>
+        <StrongText style={styles.buttonText}>⇡ Rozwiń</StrongText>
+      </TouchableOpacity>
+    </LinearGradient>
+  );
+
+  renderCollapseButton = () => (
+    <TouchableOpacity onPress={this.collapse} style={[styles.button, { paddingTop: Constants.statusBarHeight }]}>
+      <StrongText style={[styles.buttonText, styles.collapseButtonText]}>
+        ⇣ Zwiń
+      </StrongText>
+    </TouchableOpacity>
+  );
 
   render() {
-    const { children, navigation, ...rest } = this.props;
     return (
       <>
         <LandscapeScreenQuery>
-          <View style={styles.landscapeContainer}>
-            <SafeAreaView style={{ flex: 1 }}>{this.props.children}</SafeAreaView>
-          </View>
+          <View style={styles.landscapeContainer}>{this.props.children}</View>
         </LandscapeScreenQuery>
         <PortraitScreenQuery>
-          <RABottomSheet
-            {...rest}
-            ref={this.sheetRef}
-            renderContent={this.renderContent}
-            renderHeader={BottomSheet.renderHeader}
-            initialSnap={navigation.getParam("expanded", 0)}
-            snapPoints={[collapsedHeight, expandedHeight]}
-          />
+          <View
+            style={
+              this.state.state === "expanded"
+                ? [StyleSheet.absoluteFill, styles.backdrop]
+                : [
+                  { height: collapsedHeight }
+                ]
+            }
+            pointerEvents="box-none"
+          >
+            <View
+              style={[
+                this.props.style,
+                styles.container,
+                this.state.state === "collapsed" && styles.containerCollapsed,
+                this.state.state === "expanded" && styles.containerExpanded
+              ]}
+            >
+              {this.state.state === "expanded" && this.renderCollapseButton()}
+              {this.props.children}
+              {this.state.state === "collapsed" && this.renderExpandButton()}
+            </View>
+          </View>
+          <View style={[this.state.state === "expanded" && { height: collapsedHeight }]} />
         </PortraitScreenQuery>
       </>
     );
@@ -53,6 +133,10 @@ export default class BottomSheet extends React.Component<BottomSheetProps> {
 }
 
 const styles = StyleSheet.create({
+  backdrop: {
+    zIndex: 1000,
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+  },
   landscapeContainer: {
     width: 400,
     backgroundColor: white,
@@ -61,21 +145,43 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     borderLeftColor: spBlue,
     borderLeftWidth: 10
-    // position: "absolute",
-    // left: 0,
-    // top: 0,
-    // bottom: 0
   },
-  header: {
+  container: {
     shadowColor: shadowColor,
-    shadowOpacity: 1,
+    shadowOpacity: 0.1,
     shadowRadius: 2,
-    shadowOffset: { width: 0, height: -3 },
-    backgroundColor: spBlue,
-    borderTopColor: spBlue,
-    height: StyleSheet.hairlineWidth
+    shadowOffset: { width: 0, height: -3 }
   },
-  panel: {
-    height: expandedHeight
+  containerCollapsed: {
+    flex: 1,
+    height: collapsedHeight
+  },
+  containerExpanded: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0
+  },
+  gradient: {
+    zIndex: 1000,
+    paddingTop: 60,
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0
+  },
+  button: {
+    alignItems: "stretch"
+  },
+  buttonText: {
+    paddingHorizontal: 20,
+    paddingVertical: Dimensions.get("window").height > 600 ? 16 : 10,
+    textAlign: "center"
+  },
+  collapseButtonText: {
+    color: white,
+    textShadowRadius: 8,
+    textShadowColor: "#000"
   }
 });

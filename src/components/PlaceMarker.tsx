@@ -53,7 +53,6 @@ function PlaceMarker(props: PlaceMarkerProps) {
     <Marker
       centerOffset={{ x: 0, y: -(64 / 2) }}
       identifier={identifier}
-      flat
       stopPropagation
       tracksViewChanges={false}
       coordinate={details[identifier].location}

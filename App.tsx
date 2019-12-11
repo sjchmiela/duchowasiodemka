@@ -4,7 +4,7 @@ import { AppLoading } from "expo";
 import { useScreens } from "react-native-screens";
 import * as Font from "expo-font";
 import MainNavigation from "./src/navigation/MainNavigation";
-import { Platform } from "react-native";
+import { Platform, StatusBar } from "react-native";
 import { Octicons, MaterialIcons } from "@expo/vector-icons";
 
 if (Platform.OS !== "web") {
@@ -24,7 +24,8 @@ export default function App() {
         require("./assets/Inter-ExtraBold.otf")
       ),
       Octicons.loadFont(),
-      MaterialIcons.loadFont()
+      MaterialIcons.loadFont(),
+      StatusBar.setBarStyle("dark-content"),
     ])
   );
 

@@ -964,10 +964,10 @@
     util.promisify "^1.0.0"
     write-file-atomic "^2.3.0"
 
-"@expo/match-media@^0.0.0-alpha.1":
-  version "0.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@expo/match-media/-/match-media-0.0.0-alpha.1.tgz#db7a62a9d70a1ec73516003e5952d474efe442de"
-  integrity sha512-F3/Q09hgEBs/9gdoGk9Y5Yf338oqTs26XrtezhvlmFKxx4fPdfajZuK/5Bv6KyUu7RbQZgBIU+y9vabFvmmuYg==
+"@expo/match-media@^0.0.0-alpha.2":
+  version "0.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@expo/match-media/-/match-media-0.0.0-alpha.2.tgz#347e902d25aa9ab0fd559a9ba93bc7eb490ca268"
+  integrity sha512-iOpLrjgSELY/NGwkpAbuNGU7N/U/2fdstpfOLpKMGpebBKsJKLS94r2Tyd4rHAkejAMnbkTdlG1L0q9mN0PVmQ==
   dependencies:
     css-mediaquery "^0.1.2"
 

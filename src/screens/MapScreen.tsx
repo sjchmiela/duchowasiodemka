@@ -18,11 +18,16 @@ import PlaceMarker from "../components/PlaceMarker";
 import { shadowColor, spBlue } from "../constants/Colors";
 
 const initialRegion = {
-  latitude: 50.0625,
+  latitude: 50.0625 + (Platform.OS === "ios" ? -0.003 : 0),
   longitude: 19.936,
   latitudeDelta: 0.019,
   longitudeDelta: 0.019
 };
+
+let collapsedHeight = 160;
+if (Dimensions.get('window').height > 600) {
+  collapsedHeight = 250;
+}
 
 export default function MapScreen(props: NavigationStackScreenProps) {
   const sheetRef = React.createRef<BottomSheet>();
@@ -82,6 +87,10 @@ export default function MapScreen(props: NavigationStackScreenProps) {
         initialRegion={initialRegionOrPlace}
         onPress={blur}
         onMarkerPress={onMarkerPress}
+        showsMyLocationButton
+        legalLabelInsets={Platform.OS === "ios" ? {
+          bottom: collapsedHeight + 6
+        } : undefined}
       >
         {Object.keys(details).map(key => (
           <PlaceMarker
