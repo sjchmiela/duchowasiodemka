@@ -5,7 +5,8 @@ import {
   StyleSheet,
   Dimensions,
   ScrollView,
-  Platform
+  Platform,
+  SafeAreaView
 } from "react-native";
 import Animated from "react-native-reanimated";
 import details from "../details";
@@ -19,26 +20,26 @@ export default function createPartScreen(key: string, label: string) {
       .getParam("placeKey", "sp");
     const placeDetails = details[placeKey];
     let partsToRender = placeDetails[key];
-    if (!partsToRender) {
-      const ComponentToRender =
-        placeDetails[`${key[0].toLocaleUpperCase()}${key.slice(1)}`];
-      partsToRender = [<View style={styles.textPart}><ComponentToRender /></View>];
-    }
     return (
-      <ScrollView style={styles.fullHeight}>
-        <>
-          {partsToRender.map((el, index) =>
-            typeof el === "string" ? (
-              <BodyText key={index} style={styles.textPart}>
-                {el}
-              </BodyText>
-            ) : (
-              React.cloneElement(el, { key: index, style: styles.textPart })
-            )
-          )}
-        </>
-        <SmallFatText style={[styles.textPart, styles.note]}>Wykorzystano materiały ze strony internetowej Zakonu.</SmallFatText>
-      </ScrollView>
+      <SafeAreaView style={styles.fullHeight}>
+        <ScrollView style={styles.fullHeight}>
+          <>
+            {partsToRender.map((el, index) =>
+              typeof el === "string" ? (
+                <BodyText key={index} style={styles.textPart}>
+                  {el}
+                </BodyText>
+              ) : (
+                React.cloneElement(el, { key: index, style: styles.textPart })
+              )
+            )}
+          </>
+
+          <SmallFatText style={[styles.textPart, styles.note]}>
+            Wykorzystano materiały ze strony internetowej Zakonu.
+          </SmallFatText>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
   textPart: {
     marginTop: 8,
     marginBottom: 14,
-    marginHorizontal: 14,
+    marginHorizontal: 14
   },
   note: {
     color: graySpBlue
