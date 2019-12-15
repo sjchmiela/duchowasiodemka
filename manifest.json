@@ -7,7 +7,17 @@
   "name": "Duchowa Siódemka",
   "orientation": "portrait",
   "prefer_related_applications": true,
-  "related_applications": [],
+  "related_applications": [
+    {
+      "platform": "itunes",
+      "id": "pl.pijarzy.duchowasiodemka"
+    },
+    {
+      "platform": "play",
+      "url": "http://play.google.com/store/apps/details?id=pl.pijarzy.duchowasiodemka",
+      "id": "pl.pijarzy.duchowasiodemka"
+    }
+  ],
   "short_name": "Duchowa Siódemka",
   "start_url": ".",
   "theme_color": "#283957",
