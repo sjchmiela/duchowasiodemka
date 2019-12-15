@@ -3,7 +3,7 @@
     "name": "Duchowa Siódemka",
     "slug": "duchowasiodemka",
     "privacy": "public",
-    "sdkVersion": "36.0.0",
+    "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
       "android",
@@ -26,7 +26,6 @@
     ],
     "ios": {
       "supportsTablet": true
-    },
-    "description": "Tradycja odwiedzania Siedmiu Kościołów znana była już w średniowieczu w Rzymie. W XVI w. forma takiego pielgrzymowania odrodziła się w Wiecznym Mieście za sprawą św. Filipa Nereusza. Praktykowali ją kolejni święci, jak choćby założyciel pijarów, św. Józef Kalasancjusz. Pragniemy ją zaproponować mieszkańcom, pielgrzymom i turystom Krakowa."
+    }
   }
 }
