@@ -10,10 +10,9 @@ export const ofm = {
   googlePlaceId: "ChIJ51StCwxbFkcRYDX1PBOTIK0",
   location: {
     latitude: 50.061944,
-    longitude: 19.93
-  },
+    longitude: 19.93 },
   imageSource: require("../../assets/ofmcap.jpg"),
-  imageSize: { width: 2400, height: 1141 },
+  imageSize: { width: 2400, height: 1141 },
   pin: {
     graphicColor: "#5f3d29",
     pinColor: "#5f3d29"
@@ -21,86 +20,83 @@ export const ofm = {
   colors: ["#5f3d29", "#3a2418"],
   url: "https://krakow.kapucyni.pl/",
   history: [
-    "Bezpośrednio po swojej elekcji Jan III Sobieski, w 1674 r., za przykładem Zygmunta II i Władysława IV, zwrócił się do papieża Klemensa X z prośbą o udzielenie pozwolenia kapucynom na przybycie do Polski. Do Krakowa, już na stałe, kapucyni przybyli w 1695 r.",
+    "Bezpośrednio po swojej elekcji Jan III Sobieski, w 1674 r., za przykładem Zygmunta II i Władysława IV, zwrócił się do papieża Klemensa X z prośbą o udzielenie pozwolenia kapucynom na przybycie do Polski. Do Krakowa, już na stałe, kapucyni przybyli w 1695 r.",
 
-    "Kościół wybudowany na przełomie XVII/XVIII w. w stylu baroku toskańskiego przypomina tradycyjne włoskie świątynie kapucyńskie, wznoszone obok klasztorów. Każda nowa fundacja kapucyńska była w zasadzie wznoszona według tradycyjnego planu. Świątynia była więc jednonawowa z dwoma bocznymi kaplicami. Za ołtarzem głównym usytuowano chór zakonny. Gładkie ściany i beczkowe sklepienie z małymi oknami tworzyły odpowiedni nastrój do modlitwy.",
+    "Kościół wybudowany na przełomie XVII/XVIII w. w stylu baroku toskańskiego przypomina tradycyjne włoskie świątynie kapucyńskie, wznoszone obok klasztorów. Każda nowa fundacja kapucyńska była w zasadzie wznoszona według tradycyjnego planu. Świątynia była więc jednonawowa z dwoma bocznymi kaplicami. Za ołtarzem głównym usytuowano chór zakonny. Gładkie ściany i beczkowe sklepienie z małymi oknami tworzyły odpowiedni nastrój do modlitwy.",
 
-    "Po zakończeniu budowy kościoła i klasztoru Kapucynów z woli fundatora, Wojciecha Dembińskiego, rozpoczęto budowę kolejnej świątyni, tym razem poświęconej Matce Bożej Loretańskiej. Świątynia miała spełniać rolę rodowej kaplicy, a w podziemiach zaplanowano krypty dla zmarłych z rodziny. Domek Loretański zlokalizowano pomiędzy klasztorem a pałacykiem fundatora."
+    "Po zakończeniu budowy kościoła i klasztoru Kapucynów z woli fundatora, Wojciecha Dembińskiego, rozpoczęto budowę kolejnej świątyni, tym razem poświęconej Matce Bożej Loretańskiej. Świątynia miała spełniać rolę rodowej kaplicy, a w podziemiach zaplanowano krypty dla zmarłych z rodziny. Domek Loretański zlokalizowano pomiędzy klasztorem a pałacykiem fundatora."
   ],
   relics: [
-    "Najcenniejsze zabytki to kabinet Jana III Sobieskiego (sepet) – ozdobny mebel z rzymskiej pracowni Giacoma Hermana podarowany prawdopodobnie przez papieża Innocentego XI królowi Janowi III po bitwie wiedeńskiej w dowód uznania za zasługi dla chrześcijańskiego świata. Ofiarowany kapucynom do kaplicy domu loretańskiego przez jego syna, Jakuba Sobieskiego, od 1733 r. pełni swe sakralne funkcje.",
+    "Najcenniejsze zabytki to kabinet Jana III Sobieskiego (sepet) – ozdobny mebel z rzymskiej pracowni Giacoma Hermana podarowany prawdopodobnie przez papieża Innocentego XI królowi Janowi III po bitwie wiedeńskiej w dowód uznania za zasługi dla chrześcijańskiego świata. Ofiarowany kapucynom do kaplicy domu loretańskiego przez jego syna, Jakuba Sobieskiego, od 1733 r. pełni swe sakralne funkcje.",
 
-    "W kościele znajduje się również ostatni obraz namalowany przez Szymona Czechowicza w 1775 r. Dzieło jest przykładem przemiany baroku w klasycyzm, który w tym okresie rodzi się na nowo. Obraz ilustruje podanie związane z odnalezieniem grobu św. Franciszka.",
+    "W kościele znajduje się również ostatni obraz namalowany przez Szymona Czechowicza w 1775 r. Dzieło jest przykładem przemiany baroku w klasycyzm, który w tym okresie rodzi się na nowo. Obraz ilustruje podanie związane z odnalezieniem grobu św. Franciszka.",
 
-    "Kolejnym zabytkiem jest obraz Jezusa Miłosiernego namalowany przez Alfreda Hyłę. Tło u dołu obrazu przedstawia płonącą Warszawę, obraz bowiem był malowany z końcem 1944 r. jako wotum za ocalenie życia przez wysiedlonych mieszkańców stolicy, którzy znaleźli schronienie w krakowskim klasztorze kapucynów po Powstaniu Warszawskim."
+    "Kolejnym zabytkiem jest obraz Jezusa Miłosiernego namalowany przez Alfreda Hyłę. Tło u dołu obrazu przedstawia płonącą Warszawę, obraz bowiem był malowany z końcem 1944 r. jako wotum za ocalenie życia przez wysiedlonych mieszkańców stolicy, którzy znaleźli schronienie w krakowskim klasztorze kapucynów po Powstaniu Warszawskim."
   ],
   facts: [
-    "24 marca 1974 r. miała miejsce w Domku Loretańskim uroczystość, która konwentowi kapucynów nadała największy rozgłos. Wodzowie insurekcji, gen. Tadeusz Kościuszko i gen. Józef Wodzicki wraz ze swym sztabem udali się tego dnia wczesnym rankiem do Loretu na mszę św. Po jej zakończeniu obecni w Lorecie oficerowie, za przykładem gen. Kościuszki, z wyciągniętymi pałaszami złożyli przysięgę poświęcenia życia za wiarę i ojczyznę. Wydarzenie to upamiętania tablica w posadzce kaplicy loretańskiej oraz tablica na ścianie zewnętrznej Loretu.",
+    "24 marca 1974 r. miała miejsce w Domku Loretańskim uroczystość, która konwentowi kapucynów nadała największy rozgłos. Wodzowie insurekcji, gen. Tadeusz Kościuszko i gen. Józef Wodzicki wraz ze swym sztabem udali się tego dnia wczesnym rankiem do Loretu na mszę św. Po jej zakończeniu obecni w Lorecie oficerowie, za przykładem gen. Kościuszki, z wyciągniętymi pałaszami złożyli przysięgę poświęcenia życia za wiarę i ojczyznę. Wydarzenie to upamiętania tablica w posadzce kaplicy loretańskiej oraz tablica na ścianie zewnętrznej Loretu.",
 
-    "W kościele na lewo od głównego ołtarza, w bocznym filarze, zachowała się kula armatnia, która wpadła do prezbiterium w trakcie walk konfederatów barskich z wojskami rosyjskim i utkwiła w ścianie. Do dzisiaj przypomina o zrywie Polaków z 1768 r. i o umiłowaniu wolności, dla której kapucyni na równi z narodem ponieśli tak wielkie ofiary.",
+    "W kościele na lewo od głównego ołtarza, w bocznym filarze, zachowała się kula armatnia, która wpadła do prezbiterium w trakcie walk konfederatów barskich z wojskami rosyjskim i utkwiła w ścianie. Do dzisiaj przypomina o zrywie Polaków z 1768 r. i o umiłowaniu wolności, dla której kapucyni na równi z narodem ponieśli tak wielkie ofiary.",
 
-    "To w Domku Loretańskim 25 sierpnia 1887 r. przyjął habit franciszkański św. brat Albert Chmielowski."
+    "To w Domku Loretańskim 25 sierpnia 1887 r. przyjął habit franciszkański św. brat Albert Chmielowski."
   ],
   order: [
     <BodyText>
-      Zakon kapucynów jest częścią rodziny zakonów franciszkańskich. Powstał na
-      mocy wydanej przez papieża Klemensa VII w 1528 r. bulli{" "}
-      <ItalicText>Religionis Zelus</ItalicText>, w której pozwolił on kilku
-      braciom z zakonu franciszkanów obserwantów na odłączenie się od
-      dotychczasowej rodziny zakonnej i prowadzenie życia eremickiego oraz
-      noszenie brody i habitu ze spiczastym kapturem.
+      Zakon kapucynów jest częścią rodziny zakonów franciszkańskich. Powstał na mocy wydanej przez papieża Klemensa VII w 1528 r. bulli{" "}
+      <ItalicText>Religionis Zelus</ItalicText>, w której pozwolił on kilku
+      braciom z zakonu franciszkanów obserwantów na odłączenie się od dotychczasowej rodziny zakonnej i prowadzenie życia eremickiego oraz
+      noszenie brody i habitu ze spiczastym kapturem.
     </BodyText>,
-    "Życie prowadzone zgodnie z franciszkańskimi ideałami kapucynów charakteryzuje: prostota, bliskość ludziom, duch braterstwa w życiu wspólnym i apostolacie, a szczególnie życie w pokucie i modlitwie.",
+    "Życie prowadzone zgodnie z franciszkańskimi ideałami kapucynów charakteryzuje: prostota, bliskość ludziom, duch braterstwa w życiu wspólnym i apostolacie, a szczególnie życie w pokucie i modlitwie.",
 
-    "Kapucyni starają się wcielać w życie franciszkańskie ideały poprzez: dawanie pierwszeństwa życiu modlitwy, szczególnie kontemplacyjnej; praktykowanie radykalnego ubóstwa, zarówno osobistego, jak i wspólnotowego; przykład życia surowego oraz radosnej pokuty w umiłowaniu Krzyża Pańskiego; pielęgnowanie wzajemnych relacji braterskich we wspólnocie jako rodzinie zgromadzonej w Chrystusie; chętne przebywanie pośród ubogich, słabych i chorych, uczestnicząc w ich życiu i zachowując charakterystyczną bliskość z ludem; różne formy apostolatu w duchu służby."
+    "Kapucyni starają się wcielać w życie franciszkańskie ideały poprzez: dawanie pierwszeństwa życiu modlitwy, szczególnie kontemplacyjnej; praktykowanie radykalnego ubóstwa, zarówno osobistego, jak i wspólnotowego; przykład życia surowego oraz radosnej pokuty w umiłowaniu Krzyża Pańskiego; pielęgnowanie wzajemnych relacji braterskich we wspólnocie jako rodzinie zgromadzonej w Chrystusie; chętne przebywanie pośród ubogich, słabych i chorych, uczestnicząc w ich życiu i zachowując charakterystyczną bliskość z ludem; różne formy apostolatu w duchu służby."
   ],
   founder: [
     <BodyText>
-      W 1525 r. Mateusz z Bascio kierowany pragnieniem naśladowania św.
-      Franciszka w jego ubóstwie i wędrownym kaznodziejstwie, przyjmując nowy
-      krój habitu – tunikę ze spiczastym kapturem – uprosił u papieża pozwolenie
-      na nowy sposób życia. Trzy lata później papież Klemens VII bullą{" "}
+      W 1525 r. Mateusz z Bascio kierowany pragnieniem naśladowania św. Franciszka w jego ubóstwie i wędrownym kaznodziejstwie, przyjmując nowy
+      krój habitu – tunikę ze spiczastym kapturem – uprosił u papieża pozwolenie
+      na nowy sposób życia. Trzy lata później papież Klemens VII bullą{" "}
       <ItalicText>Religionis Zelus</ItalicText> prawnie zatwierdził istnienie
       nowej wspólnoty braterskiej, która pierwotnie przyjęła nazwę: Zakon Braci
-      Mniejszych Życia Eremickiego, nazwany przez ludzi niedługo potem
-      kapucynami. Dopiero jednak kapituła z 1535/36 r., na której powstały
+      Mniejszych Życia Eremickiego, nazwany przez ludzi niedługo potem
+      kapucynami. Dopiero jednak kapituła z 1535/36 r., na której powstały
       pierwsze konstytucje, nakreśliła istotne elementy charyzmatu kapucynów,
-      który odtąd miał polegać na naśladowaniu Chrystusa na wzór św. Franciszka
-      z Asyżu i wiernym zachowywaniu reguły i Testamentu. W praktyce utrzymano
-      kontemplacyjny i eremicki wymiar powołania, wzbogacając je o wymiar
-      braterski i apostolski. Reforma kapucyńska miała być niczym innym, jak
-      tylko powrotem do sposobu życia i duchowości św. Franciszka, którego
-      uważano za swego pierwszorzędnego i jedynego założyciela.
+      który odtąd miał polegać na naśladowaniu Chrystusa na wzór św. Franciszka
+      z Asyżu i wiernym zachowywaniu reguły i Testamentu. W praktyce utrzymano
+      kontemplacyjny i eremicki wymiar powołania, wzbogacając je o wymiar
+      braterski i apostolski. Reforma kapucyńska miała być niczym innym, jak
+      tylko powrotem do sposobu życia i duchowości św. Franciszka, którego
+      uważano za swego pierwszorzędnego i jedynego założyciela.
     </BodyText>,
 
-    "Wśród najsłynniejszych kapucynów należy wymienić stygmatyka św. o. Pio z Pietrelciny i doktora Kościoła – św. Wawrzyńca z Brindisi."
+    "Wśród najsłynniejszych kapucynów należy wymienić stygmatyka św. o. Pio z Pietrelciny i doktora Kościoła – św. Wawrzyńca z Brindisi."
   ],
   prayer: [
-    `Pozdrowienie Błogosławionej Maryi Dziewicy – modlitwa św. Franciszka z Asyżu:`,
+    `Pozdrowienie Błogosławionej Maryi Dziewicy – modlitwa św. Franciszka z Asyżu:`,
 
     `Bądź pozdrowiona, Pani, święta Królowo, 
 święta Boża Rodzicielko, Maryjo, która jesteś Dziewicą, uczynioną Kościołem 
-i wybraną przez najświętszego Ojca z nieba, 
-Ciebie On uświęcił z najświętszym, umiłowanym 
+i wybraną przez najświętszego Ojca z nieba, 
+Ciebie On uświęcił z najświętszym, umiłowanym 
 Synem swoim  
-i Duchem Świętym, Pocieszycielem, 
-w Tobie była i jest 
-wszelka pełnia łaski i wszelkie dobro. 
+i Duchem Świętym, Pocieszycielem, 
+w Tobie była i jest 
+wszelka pełnia łaski i wszelkie dobro. 
 Bądź pozdrowiona, Pałacu Jego, 
 Bądź pozdrowiona, Przybytku Jego, 
 Bądź pozdrowiona, Domu Jego. 
 Bądź pozdrowiona, Szato Jego, 
 Bądź pozdrowiona, Służebnico Jego, 
 Bądź pozdrowiona, Matko Jego. 
-I wy wszystkie święte cnoty, 
+I wy wszystkie święte cnoty, 
 które Duch Święty 
-swą łaską i oświeceniem 
-wlewa w serca wiernych, 
-abyście z niewiernych 
+swą łaską i oświeceniem 
+wlewa w serca wiernych, 
+abyście z niewiernych 
 uczyniły wiernych Bogu.`
   ],
   spirituality: [
-    "Duchowość kapucyńska jako szczególny wyraz duchowości franciszkańskiej nie jest tylko dla zakonników – jest dla każdego. Wyrazem tego są m.in. liczne Grupy Modlitwy Ojca Pio założone przez świętego stygmatyka. Pragną one kierować się ogólnymi zasadami franciszkańskiej duchowości w wydaniu kapucyńskim. Są to: pełne i bezwarunkowe przylgnięcie do nauki Kościoła katolickiego, kierowanego przez papieża i biskupów; posłuszeństwo papieżowi i biskupom, których rzecznikiem jest kapłan, dyrektor duchowy, mianowany przez biskupa; modlitwa z Kościołem, za Kościół i w Kościele, z czynnym uczestnictwem w życiu liturgicznym i sakramentalnym, przeżywanym jako szczyt wewnętrznej jedności z Bogiem; wynagradzanie poprzez udział w cierpieniach Chrystusa według nauki św. Pawła; czynna miłość, niosąca ulgę cierpiącym i potrzebującym jako praktyczne urzeczywistnienie miłości do Boga."
+    "Duchowość kapucyńska jako szczególny wyraz duchowości franciszkańskiej nie jest tylko dla zakonników – jest dla każdego. Wyrazem tego są m.in. liczne Grupy Modlitwy Ojca Pio założone przez świętego stygmatyka. Pragną one kierować się ogólnymi zasadami franciszkańskiej duchowości w wydaniu kapucyńskim. Są to: pełne i bezwarunkowe przylgnięcie do nauki Kościoła katolickiego, kierowanego przez papieża i biskupów; posłuszeństwo papieżowi i biskupom, których rzecznikiem jest kapłan, dyrektor duchowy, mianowany przez biskupa; modlitwa z Kościołem, za Kościół i w Kościele, z czynnym uczestnictwem w życiu liturgicznym i sakramentalnym, przeżywanym jako szczyt wewnętrznej jedności z Bogiem; wynagradzanie poprzez udział w cierpieniach Chrystusa według nauki św. Pawła; czynna miłość, niosąca ulgę cierpiącym i potrzebującym jako praktyczne urzeczywistnienie miłości do Boga."
   ]
 };
 
