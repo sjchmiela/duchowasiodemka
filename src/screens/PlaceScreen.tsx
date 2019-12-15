@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { NavigationStackScreenProps } from "react-navigation-stack";
 import { Octicons, MaterialIcons } from "@expo/vector-icons";
+import * as WebBrowser from "expo-web-browser";
 
 import details from "../details";
 import CardHeader from "../components/CardHeader";
@@ -100,7 +101,7 @@ export default function PlaceScreen(props: NavigationStackScreenProps) {
           <SecondaryButton
             title="Witryna"
             style={[styles.button, { marginLeft: 10 }]}
-            onPress={() => Linking.openURL(placeDetails.url)}
+            onPress={() => WebBrowser.openBrowserAsync(placeDetails.url)}
             renderIcon={props => <Octicons {...props} name="globe" size={24} />}
           />
         </View>

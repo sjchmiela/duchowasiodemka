@@ -17,7 +17,7 @@ export const sp = {
   imageSource: require("../../assets/sp.jpg"),
   imageSize: { width: 2400, height: 1600 },
   colors: ["#283957", "#ef7f1a", "#fff"],
-  url: "https://www.krypta.pijarzy.pl/",
+  url: "http://www.krypta.pijarzy.pl/",
   history: [
     "Pijarzy przybyli do Polski w 1642 r. na zaproszenie króla Władysława IV. Najpierw osiedlili się w Warszawie, a do Krakowa przybyli na mocy przywileju króla Jana Kazimierza. Przy ul. Pijarskiej ulokowali się dopiero po 1662 r., wcześniej przebywali na Kazimierzu.",
     "Barokowy kościół Przemienienia Pańskiego powstał w latach 1718–1728. Jego budowę pokryto z funduszy Elżbiety z Lubomirskich Sieniawskiej i biskupa krakowskiego Konstantego Felicjana Szaniawskiego. Głównym budowniczym był architekt Kacper Bażanka. Natomiast fasadę zaprojektował działający w Krakowie architekt włoski Franciszek Placidi. ",
