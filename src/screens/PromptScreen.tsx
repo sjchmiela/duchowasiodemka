@@ -32,7 +32,13 @@ export default function PromptScreen(props: NavigationStackScreenProps) {
   return (
     <View style={{ flex: 1 }}>
       {!isLandscape && <CardHeader bordered={!isLandscape} />}
-      <View style={{ paddingHorizontal: 10, paddingTop: isLandscape ? 10 : 0, paddingBottom: 10 }}>
+      <View
+        style={{
+          paddingHorizontal: 10,
+          paddingTop: isLandscape ? 10 : 0,
+          paddingBottom: 10
+        }}
+      >
         <BigFatTitle style={{}}>Duchowa Siódemka</BigFatTitle>
         {/* <PrimaryButton title="Pusty przycisk" style={{ marginBottom: 10 }} /> */}
       </View>
@@ -49,16 +55,16 @@ export default function PromptScreen(props: NavigationStackScreenProps) {
           Wiecznym Mieście za sprawą św. Filipa Nereusza. Praktykowali ją
           kolejni święci, jak choćby założyciel pijarów, św. Józef Kalasancjusz.
           Pragniemy ją zaproponować mieszkańcom, pielgrzymom i turystom Krakowa.
-          Idea nawiedzanie Siedmiu Kościołów w obrębie Starego Miasta, wokół
-          krakowskich Plant zawiera elementy turystycznego wędrowania,
+          Idea nawiedzania siedmiu kościołów w obrębie Starego Miasta, wokół
+          krakowskich Plan, zawiera elementy turystycznego wędrowania,
           estetycznego zwiedzania i duchowego pielgrzymowania. Łączy więc w
           sobie wymiar fizyczny, kulturalny i religijny. Motywem przewodnim jest
-          odwołanie do tradycji duchowej danego kościoła zawartej nie tylko w
+          odwołanie do tradycji duchowej danego kościoła, zawartej nie tylko w
           architekturze, ale również w historii i charyzmatach poszczególnych
-          zakonów. A że w symbolice biblijnej liczba 7 opisuje pełnię i
-          doskonałość wędrujący szlakiem Duchowej Siódemki zdobędzie wiedzę o
-          bogactwie kulturalnym i duchowym tych miejsc, z którego będzie mógł
-          zaczerpnąć coś dla osobistej pobożności.
+          zakonów. W symbolice biblijnej liczba 7 opisuje pełnię i doskonałość,
+          więc wędrujący szlakiem Duchowej Siódemki zdobędzie wiedzę o bogactwie
+          kulturalnym i duchowym tych miejsc oraz będzie mógł zaczerpnąć coś dla
+          własnej pobożności.
         </BodyText>
       </ScrollView>
     </View>
