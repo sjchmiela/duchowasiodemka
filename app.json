@@ -25,7 +25,38 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "pl.pijarzy.duchowasiodemka",
+      "requireFullScreen": false,
+      "associatedDomains": [
+        "applinks:duchowasiodemka.pl"
+      ]
+    },
+    "android": {
+      "package": "pl.pijarzy.duchowasiodemka",
+      "versionCode": 1,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCe2kBcWQ4sn9GzSHdHOKOZARWmWpdgKJs"
+        }
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": {
+            "scheme": "https",
+            "host": "duchowasiodemka.pl"
+          },
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
     }
   }
 }
