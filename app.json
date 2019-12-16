@@ -24,6 +24,9 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "locales": {
+
+    },
     "ios": {
       "buildNumber": "3",
       "supportsTablet": true,
@@ -31,11 +34,14 @@
       "requireFullScreen": false,
       "associatedDomains": [
         "applinks:duchowasiodemka.pl"
-      ]
+      ],
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Aplikacja będzie wyświetlać Twoje położenie na mapie."
+      }
     },
     "android": {
       "package": "pl.pijarzy.duchowasiodemka",
-      "versionCode": "3",
+      "versionCode": 3,
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION"
