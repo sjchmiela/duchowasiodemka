@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Duchowa Siódemka",
+    "name": "Duchowa7",
     "slug": "duchowasiodemka",
     "privacy": "public",
     "sdkVersion": "35.0.0",
@@ -25,6 +25,7 @@
       "**/*"
     ],
     "ios": {
+      "buildNumber": "3",
       "supportsTablet": true,
       "bundleIdentifier": "pl.pijarzy.duchowasiodemka",
       "requireFullScreen": false,
@@ -34,7 +35,7 @@
     },
     "android": {
       "package": "pl.pijarzy.duchowasiodemka",
-      "versionCode": 1,
+      "versionCode": "3",
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION"
@@ -43,6 +44,19 @@
         "googleMaps": {
           "apiKey": "AIzaSyCe2kBcWQ4sn9GzSHdHOKOZARWmWpdgKJs"
         }
+      },
+      "adaptiveIcon": {
+        "foregroundImage": "assets/icon-transparent.png",
+        "backgroundColor": "#ffffff"
+      },
+      "splash": {
+        "resizeMode": "native",
+        "backgroundColor": "#ffffff",
+        "mdpi": "assets/splash/Logo.png",
+        "hdpi": "assets/splash/Logo@1.5x.png",
+        "xhdpi": "assets/splash/Logo@2x.png",
+        "xxhdpi": "assets/splash/Logo@3x.png",
+        "xxxhdpi": "assets/splash/Logo@4x.png"
       },
       "intentFilters": [
         {
