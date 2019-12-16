@@ -25,7 +25,7 @@ const initialRegion = {
 };
 
 let collapsedHeight = 160;
-if (Dimensions.get('window').height > 600) {
+if (Dimensions.get("window").height > 600) {
   collapsedHeight = 250;
 }
 
@@ -60,7 +60,9 @@ export default function MapScreen(props: NavigationStackScreenProps) {
   );
   const initialPlaceKey = React.useMemo(() => {
     for (let route of props.navigation.state.routes) {
-      const placeKey = props.navigation.getChildNavigation(route.key).getParam('placeKey');
+      const placeKey = props.navigation
+        .getChildNavigation(route.key)
+        .getParam("placeKey");
       if (placeKey) {
         return placeKey;
       }
@@ -68,11 +70,10 @@ export default function MapScreen(props: NavigationStackScreenProps) {
   }, []);
   const initialRegionOrPlace = {
     ...initialRegion,
-    ...(initialPlaceKey
-      ? details[initialPlaceKey].location
-      : {})
+    ...(initialPlaceKey ? details[initialPlaceKey].location : {})
   };
   const isLandscape = useLandscapeScreen();
+  const [isMapReady, setIsMapReady] = React.useState(false);
   return (
     <View
       style={[
@@ -88,18 +89,28 @@ export default function MapScreen(props: NavigationStackScreenProps) {
         onPress={blur}
         onMarkerPress={onMarkerPress}
         showsMyLocationButton
-        legalLabelInsets={Platform.OS === "ios" ? {
-          bottom: collapsedHeight + 6
-        } : undefined}
+        legalLabelInsets={
+          Platform.OS === "ios"
+            ? {
+                bottom: collapsedHeight + 6
+              }
+            : undefined
+        }
+        onLayout={({ nativeEvent }) =>
+          nativeEvent.layout.width > 0 &&
+          nativeEvent.layout.height > 0 &&
+          setIsMapReady(true)
+        }
       >
-        {Object.keys(details).map(key => (
-          <PlaceMarker
-            key={key}
-            identifier={key}
-            initialSelected={key === initialPlaceKey}
-            ref={refs.current[key] || (refs.current[key] = React.createRef())}
-          />
-        ))}
+        {isMapReady &&
+          Object.keys(details).map(key => (
+            <PlaceMarker
+              key={key}
+              identifier={key}
+              initialSelected={key === initialPlaceKey}
+              ref={refs.current[key] || (refs.current[key] = React.createRef())}
+            />
+          ))}
       </MapView>
       <MapFocusContext.Provider value={{ blur }}>
         <BottomSheet
