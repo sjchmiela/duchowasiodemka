@@ -25,10 +25,10 @@
       "**/*"
     ],
     "locales": {
-
+      "pl-PL": "./dummy-locale.json"
     },
     "ios": {
-      "buildNumber": "3",
+      "buildNumber": "5",
       "supportsTablet": true,
       "bundleIdentifier": "pl.pijarzy.duchowasiodemka",
       "requireFullScreen": false,
@@ -41,7 +41,7 @@
     },
     "android": {
       "package": "pl.pijarzy.duchowasiodemka",
-      "versionCode": 3,
+      "versionCode": 5,
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION"

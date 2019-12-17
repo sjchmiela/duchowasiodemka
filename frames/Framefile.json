@@ -1,0 +1,44 @@
+{
+  "device_frame_version": "latest",
+  "default": {
+    "title": {
+      "fonts": [
+        {
+          "font": "./Inter-Medium.otf"
+        }
+      ]
+    },
+    "background": "./background.jpg",
+    "padding": 50
+  },
+  "data": [
+    {
+      "filter": "0launch",
+      "title": {
+        "text": "7 świątyni w Krakowie",
+        "color": "#283957"
+      }
+    },
+    {
+      "filter": "1sp",
+      "title": {
+        "text": "Nawigacja po kościołach",
+        "color": "#283957"
+      }
+    },
+    {
+      "filter": "2ext",
+      "title": {
+        "text": "Wszystkie potrzebne informacje",
+        "color": "#283957"
+      }
+    },
+    {
+      "filter": "3ocarm",
+      "title": {
+        "text": "Duchowy przewodnik",
+        "color": "#283957"
+      }
+    }
+  ]
+}
