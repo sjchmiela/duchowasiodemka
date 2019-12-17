@@ -55,15 +55,6 @@
         "foregroundImage": "assets/icon-transparent.png",
         "backgroundColor": "#ffffff"
       },
-      "splash": {
-        "resizeMode": "native",
-        "backgroundColor": "#ffffff",
-        "mdpi": "assets/splash/Logo.png",
-        "hdpi": "assets/splash/Logo@1.5x.png",
-        "xhdpi": "assets/splash/Logo@2x.png",
-        "xxhdpi": "assets/splash/Logo@3x.png",
-        "xxxhdpi": "assets/splash/Logo@4x.png"
-      },
       "intentFilters": [
         {
           "action": "VIEW",
