@@ -4,7 +4,7 @@
   "dir": "auto",
   "display": "standalone",
   "lang": "en",
-  "name": "Duchowa Siódemka",
+  "name": "Duchowa7",
   "orientation": "portrait",
   "prefer_related_applications": true,
   "related_applications": [
@@ -18,7 +18,7 @@
       "id": "pl.pijarzy.duchowasiodemka"
     }
   ],
-  "short_name": "Duchowa Siódemka",
+  "short_name": "Duchowa7",
   "start_url": ".",
   "theme_color": "#283957",
   "icons": [
