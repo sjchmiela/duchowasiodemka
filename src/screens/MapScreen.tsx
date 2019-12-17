@@ -73,7 +73,7 @@ export default function MapScreen(props: NavigationStackScreenProps) {
     ...(initialPlaceKey ? details[initialPlaceKey].location : {})
   };
   const isLandscape = useLandscapeScreen();
-  const [isMapReady, setIsMapReady] = React.useState(false);
+  const [isMapReady, setIsMapReady] = React.useState(Platform.OS === "web");
   return (
     <View
       style={[
