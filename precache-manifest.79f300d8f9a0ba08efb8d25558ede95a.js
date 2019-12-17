@@ -112,24 +112,24 @@ self.__precacheManifest = [
     "url": "/serve.json"
   },
   {
-    "revision": "c6650c75f24ff43201f328a0d71a26a6",
-    "url": "/favicon.ico"
-  },
-  {
-    "revision": "9ff235085c8aff2a0dce3e744071e36f",
-    "url": "/favicon.png"
+    "revision": "692037903fcf22786d8130c25a48fa3e",
+    "url": "/CNAME"
   },
   {
     "revision": "05f6965fe83e231ee7166a6c19b51d3e",
     "url": "/.DS_Store"
   },
   {
-    "revision": "692037903fcf22786d8130c25a48fa3e",
-    "url": "/CNAME"
+    "revision": "59a89354582654384e3e538411a8d185",
+    "url": "/.well-known/apple-app-site-association"
   },
   {
-    "revision": "d41d8cd98f00b204e9800998ecf8427e",
-    "url": "/.well-known/apple-app-site-association"
+    "revision": "c6650c75f24ff43201f328a0d71a26a6",
+    "url": "/favicon.ico"
+  },
+  {
+    "revision": "9ff235085c8aff2a0dce3e744071e36f",
+    "url": "/favicon.png"
   },
   {
     "revision": "f18c818509109a748d971aa5ed0697e8",
@@ -196,7 +196,7 @@ self.__precacheManifest = [
     "url": "/apple/splash/icon_828x1792.png"
   },
   {
-    "revision": "5cf3f6d64ef196c5f00ab4d25daf00ee",
+    "revision": "1edfff0315b884a600870536f1700268",
     "url": "/index.html"
   },
   {
