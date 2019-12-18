@@ -6,6 +6,9 @@ import {
   createStackNavigator
 } from "react-navigation-stack";
 import { NavigationActions } from "react-navigation";
+// import Constants from "expo-constants";
+// import * as Permissions from "expo-permissions";
+// import * as Location from "expo-location";
 
 import details from "../details";
 import usePrevious from "../hooks/usePrevious";
@@ -16,6 +19,7 @@ import MapFocusContext from "../components/MapFocusContext";
 import PlacePin from "../components/PlacePin";
 import PlaceMarker from "../components/PlaceMarker";
 import { shadowColor, spBlue } from "../constants/Colors";
+// import LocationButton from "../components/LocationButton";
 
 const initialRegion = {
   latitude: 50.0625 + (Platform.OS === "ios" ? -0.003 : 0),
@@ -74,6 +78,49 @@ export default function MapScreen(props: NavigationStackScreenProps) {
   };
   const isLandscape = useLandscapeScreen();
   const [isMapReady, setIsMapReady] = React.useState(Platform.OS === "web");
+
+  // const [showsUserLocation, setShowsUserLocation] = React.useState(false);
+  // const [followsUserLocation, setFollowsUserLocation] = React.useState(false);
+  // const [userLocation, setUserLocation] = React.useState(null);
+  // const onUserLocationChange = React.useCallback((event) => {
+  //   alert(event.nativeEvent.coordinate);
+  //   setUserLocation(event.nativeEvent.coordinate);
+  // }, [setUserLocation]);
+  // const focusOnUser = React.useCallback(() => {
+  //   alert(userLocation);
+  //   // Location.getCurrentPositionAsync({ accuracy:Location.Accuracy.Balanced})
+  //   setFollowsUserLocation(true);
+  //   // console.log("yes");
+  //   // setTimeout(() => {
+  //   //   setFollowsUserLocation(false);
+  //   //   console.log("no");
+  //   // }, 2000);
+  // }, [setFollowsUserLocation]);
+  // React.useEffect(() => {
+  //   Permissions.getAsync(Permissions.LOCATION).then(response => {
+  //     if (response.status === "granted") {
+  //       setShowsUserLocation(true);
+  //     }
+  //   });
+  // }, []);
+  // const onLocationButtonPressed = React.useCallback(() => {
+  //   if (!showsUserLocation) {
+  //     Permissions.askAsync(Permissions.LOCATION)
+  //       .then(response => {
+  //         if (response.status === "granted") {
+  //           setShowsUserLocation(true);
+  //           focusOnUser();
+  //         } else {
+  //           alert("Nie ma dostępu do lokalizacji");
+  //         }
+  //       })
+  //       .catch(e => {
+  //         alert("nie udało się pobrać lokalizacji");
+  //       });
+  //   } else {
+  //     focusOnUser();
+  //   }
+  // }, [focusOnUser, setShowsUserLocation, showsUserLocation]);
   return (
     <View
       style={[
@@ -83,14 +130,16 @@ export default function MapScreen(props: NavigationStackScreenProps) {
     >
       <MapView
         initialSelectedIdentifier={initialPlaceKey}
-        showsUserLocation
+        showsUserLocation /*={showsUserLocation}*/
         style={styles.fullHeight}
         initialRegion={initialRegionOrPlace}
         onPress={blur}
         onMarkerPress={onMarkerPress}
         showsMyLocationButton
+        toolbarEnabled={false}
+        compassOffset={{ x: -7, y: 0 }}
         legalLabelInsets={
-          Platform.OS === "ios"
+          Platform.OS === "ios" && !isLandscape
             ? {
                 bottom: collapsedHeight + 6
               }
@@ -112,6 +161,16 @@ export default function MapScreen(props: NavigationStackScreenProps) {
             />
           ))}
       </MapView>
+      {/* {Platform.OS !== "web" && (
+        <LocationButton
+          style={{
+            position: "absolute",
+            top: 10 + Constants.statusBarHeight,
+            right: 16
+          }}
+          onPress={onLocationButtonPressed}
+        />
+      )} */}
       <MapFocusContext.Provider value={{ blur }}>
         <BottomSheet
           ref={sheetRef}
