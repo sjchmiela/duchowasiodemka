@@ -104,10 +104,6 @@ self.__precacheManifest = [
     "url": "/./fonts/SimpleLineIcons.ttf"
   },
   {
-    "revision": "c6650c75f24ff43201f328a0d71a26a6",
-    "url": "/favicon.ico"
-  },
-  {
     "revision": "d0c694b562b2208635f250762cd7fc79",
     "url": "/serve.json"
   },
@@ -116,8 +112,12 @@ self.__precacheManifest = [
     "url": "/expo-service-worker.js"
   },
   {
-    "revision": "9ff235085c8aff2a0dce3e744071e36f",
-    "url": "/favicon.png"
+    "revision": "c6650c75f24ff43201f328a0d71a26a6",
+    "url": "/favicon.ico"
+  },
+  {
+    "revision": "05f6965fe83e231ee7166a6c19b51d3e",
+    "url": "/.DS_Store"
   },
   {
     "revision": "692037903fcf22786d8130c25a48fa3e",
@@ -128,8 +128,8 @@ self.__precacheManifest = [
     "url": "/.well-known/apple-app-site-association"
   },
   {
-    "revision": "05f6965fe83e231ee7166a6c19b51d3e",
-    "url": "/.DS_Store"
+    "revision": "9ff235085c8aff2a0dce3e744071e36f",
+    "url": "/favicon.png"
   },
   {
     "revision": "f18c818509109a748d971aa5ed0697e8",
