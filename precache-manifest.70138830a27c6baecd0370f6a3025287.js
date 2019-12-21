@@ -104,14 +104,6 @@ self.__precacheManifest = [
     "url": "/./fonts/SimpleLineIcons.ttf"
   },
   {
-    "revision": "48c7ed4e7da9792af288a60d7242d615",
-    "url": "/expo-service-worker.js"
-  },
-  {
-    "revision": "59a89354582654384e3e538411a8d185",
-    "url": "/.well-known/apple-app-site-association"
-  },
-  {
     "revision": "c6650c75f24ff43201f328a0d71a26a6",
     "url": "/favicon.ico"
   },
@@ -120,16 +112,24 @@ self.__precacheManifest = [
     "url": "/serve.json"
   },
   {
-    "revision": "692037903fcf22786d8130c25a48fa3e",
-    "url": "/CNAME"
-  },
-  {
-    "revision": "05f6965fe83e231ee7166a6c19b51d3e",
-    "url": "/.DS_Store"
+    "revision": "48c7ed4e7da9792af288a60d7242d615",
+    "url": "/expo-service-worker.js"
   },
   {
     "revision": "9ff235085c8aff2a0dce3e744071e36f",
     "url": "/favicon.png"
+  },
+  {
+    "revision": "692037903fcf22786d8130c25a48fa3e",
+    "url": "/CNAME"
+  },
+  {
+    "revision": "59a89354582654384e3e538411a8d185",
+    "url": "/.well-known/apple-app-site-association"
+  },
+  {
+    "revision": "05f6965fe83e231ee7166a6c19b51d3e",
+    "url": "/.DS_Store"
   },
   {
     "revision": "f18c818509109a748d971aa5ed0697e8",
