@@ -116,6 +116,10 @@ self.__precacheManifest = [
     "url": "/favicon.ico"
   },
   {
+    "revision": "9ff235085c8aff2a0dce3e744071e36f",
+    "url": "/favicon.png"
+  },
+  {
     "revision": "05f6965fe83e231ee7166a6c19b51d3e",
     "url": "/.DS_Store"
   },
@@ -126,10 +130,6 @@ self.__precacheManifest = [
   {
     "revision": "59a89354582654384e3e538411a8d185",
     "url": "/.well-known/apple-app-site-association"
-  },
-  {
-    "revision": "9ff235085c8aff2a0dce3e744071e36f",
-    "url": "/favicon.png"
   },
   {
     "revision": "f18c818509109a748d971aa5ed0697e8",
