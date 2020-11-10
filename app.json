@@ -3,7 +3,6 @@
     "name": "Duchowa7",
     "slug": "duchowasiodemka",
     "privacy": "public",
-    "sdkVersion": "35.0.0",
     "platforms": [
       "ios",
       "android",
