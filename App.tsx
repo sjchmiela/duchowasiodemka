@@ -23,6 +23,10 @@ export default function App() {
         "Inter-ExtraBold",
         require("./assets/Inter-ExtraBold.otf")
       ),
+      Font.loadAsync(
+        "Inter-BoldItalic",
+        require("./assets/Inter-BoldItalic.otf")
+      ),
       Octicons.loadFont(),
       MaterialIcons.loadFont(),
       Platform.OS === "android" && StatusBar.setTranslucent(false),

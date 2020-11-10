@@ -8,27 +8,32 @@ import {
   ScrollView,
   TouchableHighlight,
   Platform,
-  Linking
+  Linking,
 } from "react-native";
 import { NavigationStackScreenProps } from "react-navigation-stack";
 
 import DownloadButtons from "../components/DownloadButtons";
 import CardHeader from "../components/CardHeader";
+import FELogo from "../components/FELogo";
+import UELogo from "../components/UELogo";
 import {
   BodyText,
   BigFatTitle,
   StrongText,
-  SmallFatText
+  SmallFatItalicText,
+  SmallFatText,
 } from "../components/Text";
 import {
   lightSpBlue,
   touchableBackgroundColor,
   touchableContentColor,
-  spBlue
+  spBlue,
+  graySpBlue,
 } from "../constants/Colors";
 import DirectionIcon from "../components/DirectionIcon";
 import { PrimaryButton } from "../components/Button";
 import useLandscapeScreen from "../hooks/useLandscapeScreen";
+import Svg from "react-native-svg";
 
 export default function PromptScreen(props: NavigationStackScreenProps) {
   const isLandscape = useLandscapeScreen();
@@ -39,7 +44,7 @@ export default function PromptScreen(props: NavigationStackScreenProps) {
         style={{
           paddingHorizontal: 10,
           paddingTop: isLandscape ? 10 : 0,
-          paddingBottom: 10
+          paddingBottom: 10,
         }}
       >
         <BigFatTitle>Duchowa Siódemka</BigFatTitle>
@@ -49,8 +54,11 @@ export default function PromptScreen(props: NavigationStackScreenProps) {
         style={{
           flex: 1,
           borderTopColor: "#a0a0a0",
-          borderTopWidth: StyleSheet.hairlineWidth
+          borderTopWidth: StyleSheet.hairlineWidth,
         }}
+        // contentContainerStyle={{
+        //   alignItems: "stretch",
+        // }}
       >
         <BodyText style={{ paddingHorizontal: 10, paddingVertical: 8 }}>
           Tradycja odwiedzania Siedmiu Kościołów znana była już w średniowieczu
@@ -69,6 +77,44 @@ export default function PromptScreen(props: NavigationStackScreenProps) {
           wiedzę o bogactwie kulturalnym i duchowym tych miejsc oraz będzie mógł
           zaczerpnąć coś dla własnej pobożności.
         </BodyText>
+        <View
+          style={{
+            paddingVertical: 8,
+            paddingRight: 10,
+            height: 77 + 16,
+            flexDirection: "row",
+            // alignContent: "space-between",
+            // alignSelf: "stretch",
+            // alignItems: "center",
+            // width: 300,
+            justifyContent: "space-between",
+          }}
+        >
+          <View style={{ flex: 1 }}>
+            <FELogo />
+          </View>
+          <View style={{ flex: 1 }}>
+            <UELogo />
+          </View>
+        </View>
+        <SmallFatText
+          style={{
+            paddingHorizontal: 10,
+            paddingVertical: 8,
+            color: graySpBlue,
+          }}
+        >
+          Aplikacja zrealizowana w ramach projektu{" "}
+          <SmallFatItalicText>
+            „Perła polskiego baroku – rewaloryzacja nowoodkrytych, zabytkowych
+            polichromii w krypcie kościoła Pijarów w Krakowie oraz odtworzenie
+            historycznych galerii w Kolegium Pijarskim w celu udostępnienia
+            zabytkowych wnętrz i poszerzenia działalności kulturalnej”
+          </SmallFatItalicText>{" "}
+          zrealizowanego przy udziale środków Europejskiego Funduszu Rozwoju
+          Regionalnego w ramach Programu Operacyjnego Infrastruktura
+          i Środowisko 2014–2020.
+        </SmallFatText>
       </ScrollView>
     </View>
   );
