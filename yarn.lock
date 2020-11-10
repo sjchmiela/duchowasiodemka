@@ -1724,12 +1724,13 @@
     lodash "^4.17.15"
     write-file-atomic "^2.3.0"
 
-"@expo/match-media@^0.0.0-alpha.2":
-  version "0.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@expo/match-media/-/match-media-0.0.0-alpha.2.tgz#347e902d25aa9ab0fd559a9ba93bc7eb490ca268"
-  integrity sha512-iOpLrjgSELY/NGwkpAbuNGU7N/U/2fdstpfOLpKMGpebBKsJKLS94r2Tyd4rHAkejAMnbkTdlG1L0q9mN0PVmQ==
+"@expo/match-media@^0.0.0-beta.2":
+  version "0.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@expo/match-media/-/match-media-0.0.0-beta.2.tgz#dbd186534acfbef658ed10f407759495c3f99c29"
+  integrity sha512-iXYqozTTMDuwC4OuGqSiA9ryLPoUyaw2VOcufSt40vaEpLWnDQM8/Tg7n2msogqx+cGrKc3QZjowHhYg7sidOA==
   dependencies:
     css-mediaquery "^0.1.2"
+    expo-screen-orientation "~1.1.1"
 
 "@expo/metro-config@0.1.39":
   version "0.1.39"
@@ -6599,6 +6600,13 @@ expo-pwa@0.0.50:
     commander "2.20.0"
     fs-extra "9.0.0"
     update-check "1.5.3"
+
+expo-screen-orientation@~1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/expo-screen-orientation/-/expo-screen-orientation-1.1.1.tgz#515776e534530efdb716e56ec0c47cf8fb9de82f"
+  integrity sha512-o3RhmidIhVK4lXHVActnO2iD0ZrZKxzWuRrJaTSpRsvRjCabeE74xkpZWPGcEcXhAxEwMaAAizHO8rlJDdrVzw==
+  dependencies:
+    fbjs "1.0.0"
 
 expo-splash-screen@~0.6.2:
   version "0.6.2"
