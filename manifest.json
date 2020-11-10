@@ -1,12 +1,13 @@
 {
   "background_color": "#ffffff",
   "description": "Tradycja odwiedzania Siedmiu Kościołów znana była już w średniowieczu w Rzymie. W XVI w. forma takiego pielgrzymowania odrodziła się w Wiecznym Mieście za sprawą św. Filipa Nereusza. Praktykowali ją kolejni święci, jak choćby założyciel pijarów, św. Józef Kalasancjusz. Pragniemy ją zaproponować mieszkańcom, pielgrzymom i turystom Krakowa.",
-  "dir": "auto",
   "display": "standalone",
   "lang": "en",
   "name": "Duchowa7",
+  "short_name": "Duchowa7",
+  "start_url": "/?utm_source=web_app_manifest",
+  "theme_color": "#283957",
   "orientation": "portrait",
-  "prefer_related_applications": true,
   "related_applications": [
     {
       "platform": "itunes",
@@ -18,83 +19,21 @@
       "id": "pl.pijarzy.duchowasiodemka"
     }
   ],
-  "short_name": "Duchowa7",
-  "start_url": ".",
-  "theme_color": "#283957",
+  "prefer_related_applications": true,
   "icons": [
     {
-      "src": "/apple/splash/icon_1125x2436.png",
-      "sizes": "1125x2436",
+      "src": "/pwa/chrome-icon/chrome-icon-144.png",
+      "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "/apple/splash/icon_1136x640.png",
-      "sizes": "1136x640",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/splash/icon_1242x2208.png",
-      "sizes": "1242x2208",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/splash/icon_1242x2688.png",
-      "sizes": "1242x2688",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/splash/icon_1334x750.png",
-      "sizes": "1334x750",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/splash/icon_1792x828.png",
-      "sizes": "1792x828",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/icons/icon_180x180.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/icons/icon_192x192.png",
+      "src": "/pwa/chrome-icon/chrome-icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/apple/splash/icon_2208x1242.png",
-      "sizes": "2208x1242",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/splash/icon_2436x1125.png",
-      "sizes": "2436x1125",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/splash/icon_2688x1242.png",
-      "sizes": "2688x1242",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/icons/icon_512x512.png",
+      "src": "/pwa/chrome-icon/chrome-icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/splash/icon_640x1136.png",
-      "sizes": "640x1136",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/splash/icon_750x1334.png",
-      "sizes": "750x1334",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple/splash/icon_828x1792.png",
-      "sizes": "828x1792",
       "type": "image/png"
     }
   ]
