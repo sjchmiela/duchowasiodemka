@@ -29,8 +29,8 @@ export default function App() {
       ),
       Octicons.loadFont(),
       MaterialIcons.loadFont(),
-      Platform.OS === "android" && StatusBar.setTranslucent(false),
-      StatusBar.setBarStyle(Platform.OS === "android" ? "light-content" : "dark-content"),
+      StatusBar.setTranslucent(true),
+      StatusBar.setBarStyle("dark-content"),
     ])
   );
 
