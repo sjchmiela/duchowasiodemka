@@ -9,7 +9,7 @@
       "web"
     ],
     "primaryColor": "#283957",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -27,7 +27,7 @@
       "pl-PL": "./dummy-locale.json"
     },
     "ios": {
-      "buildNumber": "5",
+      "buildNumber": "10",
       "supportsTablet": true,
       "bundleIdentifier": "pl.pijarzy.duchowasiodemka",
       "requireFullScreen": false,
@@ -40,7 +40,7 @@
     },
     "android": {
       "package": "pl.pijarzy.duchowasiodemka",
-      "versionCode": 5,
+      "versionCode": 10,
       "permissions": [
         "ACCESS_COARSE_LOCATION",
         "ACCESS_FINE_LOCATION"
