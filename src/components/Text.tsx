@@ -12,6 +12,9 @@ export const BigFatTitle = props => (
 export const SmallFatText = props => (
   <Text {...props} style={[props.style, styles.smallFatText]} />
 );
+export const SmallFatItalicText = props => (
+  <Text {...props} style={[props.style, styles.smallFatText, styles.smallFatItalicText]} />
+);
 export const StrongText = props => (
   <Text {...props} style={[props.style, styles.body, styles.strongText]} />
 );
@@ -35,6 +38,9 @@ const styles = StyleSheet.create({
   },
   italicText: {
     fontFamily: 'Inter-Italic'
+  },
+  smallFatItalicText: {
+    fontFamily: 'Inter-BoldItalic'
   },
   bigFatTitle: {
     fontFamily: 'Inter-ExtraBold',
