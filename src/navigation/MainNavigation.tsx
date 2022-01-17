@@ -21,4 +21,4 @@ const MainStackNavigator = createStackNavigator({
 
 const App = createAppContainer(MainStackNavigator);
 
-export default Platform.OS === "web" ? createBrowserApp(App, { history: "browser"}) : App;
+export default Platform.OS === "web" ? createBrowserApp(App, { history: "hash"}) : App;
